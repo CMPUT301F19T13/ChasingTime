@@ -2,16 +2,22 @@ package com.example.soulbook;
 
 import java.util.ArrayList;
 
+import java.util.HashMap;
+
 public class mood {
     private String content;
-    private User poster;
+    private String poster;
     private time Time;
     private ArrayList<comment> comments;
-    public mood(String content, User poster, time time){
+    private ArrayList<String> likes;
+    public mood(String content, String poster, time time){
+
         this.content = content;
         this.poster = poster;
         this.Time = time;
         comments = null;
+        likes = null;
+
     }
 
 
@@ -20,7 +26,8 @@ public class mood {
         return Time;
     }
 
-    public User getPoster() {
+    public String getPoster() {
+
         return poster;
     }
 
@@ -43,12 +50,24 @@ public class mood {
     public void deleteComment(int index){
         comments.remove(index);
     }
+
+
+    public HashMap<String, Object> tomap(){
+        HashMap<String, Object> result = new HashMap();
+        result.put("content", content);
+        result.put("poster", poster);
+        result.put("time", Time);
+        result.put("comments", comments);
+        return result;
+    }
+
 }
 
 class comment {
     private String content;
-    private User commenter;
-    public comment(String content, User commenter){
+    private String commenter;
+    public comment(String content, String commenter){
+
         this.content = content;
         this.commenter = commenter;
     }
@@ -57,7 +76,8 @@ class comment {
         return content;
     }
 
-    public User getCommenter() {
+
+    public String getCommenter() {
         return commenter;
     }
 }

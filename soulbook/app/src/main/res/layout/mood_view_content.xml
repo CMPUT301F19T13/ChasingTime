@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/listview_avatar"
+            android:src="@drawable/avatar"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nickname"
+            android:textSize="20dp"
+            android:layout_marginLeft="60dp"
+            android:layout_gravity="bottom"
+            android:id="@+id/listview_nickname"
+            android:textColor="@color/colorBlack"/>
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:src="@drawable/delete_mood"
+            android:id="@+id/listview_delete_mood"
+            android:scaleType="fitXY"
+            android:background="@color/colorTransparency"/>
+    </FrameLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="this is mood text, this is mood text, this is mood text, this is mood text, this is mood text, this is mood text, this is mood text, this is mood text, this is mood text, "
+        android:textColor="@color/colorBlack"
+        android:id="@+id/listview_mood_text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="this is time"
+            android:id="@+id/listview_mood_time"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="this is location"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/listview_location"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp">
+
+            <ImageButton
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/like_button"
+                android:layout_gravity="end"
+                android:id="@+id/listview_like_button"
+                android:scaleType="fitXY"
+                android:background="@color/colorTransparency"
+                android:layout_marginTop="10dp"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DX and 25 other peoples think the mood is cool!"
+        android:id="@+id/listview_like_list"/>
+
+
+
+</LinearLayout>
