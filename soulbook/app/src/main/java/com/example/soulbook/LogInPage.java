@@ -70,7 +70,6 @@ public class LogInPage extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-
                                         String UserId = FirebaseAuth.getInstance().getUid();
                                         FirebaseDatabase.getInstance().getReference().child("users").child(UserId).addValueEventListener(new ValueEventListener() {
                                             @Override
@@ -85,7 +84,6 @@ public class LogInPage extends AppCompatActivity {
 
                                             }
                                         });
-
 
                                         startActivity(new Intent(LogInPage.this, MainActivity.class));
                                     }
