@@ -24,20 +24,23 @@ import java.util.ArrayList;
 public class moodListAdapter extends BaseAdapter {
     private Context context;
     ArrayList<mood> moods;
+    ArrayList<String> nicknames, hours;
     private LayoutInflater mLayoutInflater;
     private ImageView listViewAvatar;
     private TextView listViewNickName, listViewMoodText, listViewTime, listViewLocation, listViewLikeList;
     private ImageButton deleteButton, likeButton;
     private String nickname;
 
-    public moodListAdapter(Context context, ArrayList<mood> moods){
+    public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames, ArrayList<String> hours){
         this.context = context;
         mLayoutInflater = LayoutInflater.from(context);
         this.moods = moods;
+        this.nicknames = nicknames;
+        this.hours = hours;
     }
     @Override
     public int getCount() {
-        return 0;
+        return moods.size();
     }
 
     @Override
@@ -62,21 +65,9 @@ public class moodListAdapter extends BaseAdapter {
         deleteButton = convertView.findViewById(R.id.listview_delete_mood);
         likeButton = convertView.findViewById(R.id.listview_like_button);
         mood thismood = moods.get(position);
-        final String UserId = thismood.getPoster();
-        FirebaseDatabase.getInstance().getReference().addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                nickname= dataSnapshot.child("user").child(UserId).child("nickname").getValue().toString();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-        listViewNickName.setText(nickname);
+        listViewNickName.setText(nicknames.get(position));
         listViewMoodText.setText(thismood.getContent());
-        listViewTime.setText(thismood.getTime().printTime());
+        listViewTime.setText(hours.get(position));
         return convertView;
 
     }

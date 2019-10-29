@@ -1,7 +1,6 @@
 package com.example.soulbook;
 
 import java.util.ArrayList;
-
 import java.util.HashMap;
 
 public class mood {
@@ -11,13 +10,21 @@ public class mood {
     private ArrayList<comment> comments;
     private ArrayList<String> likes;
     public mood(String content, String poster, time time){
-
         this.content = content;
         this.poster = poster;
         this.Time = time;
         comments = null;
         likes = null;
+    }
 
+    public mood(HashMap<String, Object> a){
+        HashMap<String, Object> b = (HashMap)a.get("time");
+        content = String.valueOf(a.get("content"));
+        poster = String.valueOf(a.get("poster"));
+        Time = new time(Integer.parseInt(String.valueOf(b.get("year"))), Integer.parseInt(String.valueOf(b.get("month"))),Integer.parseInt(String.valueOf(b.get("day"))),Integer.parseInt(String.valueOf(b.get("hour"))),Integer.parseInt(String.valueOf(b.get("min"))));
+        Time = null;
+        comments = null;
+        likes = new ArrayList<>();
     }
 
 
@@ -27,7 +34,6 @@ public class mood {
     }
 
     public String getPoster() {
-
         return poster;
     }
 
@@ -51,7 +57,6 @@ public class mood {
         comments.remove(index);
     }
 
-
     public HashMap<String, Object> tomap(){
         HashMap<String, Object> result = new HashMap();
         result.put("content", content);
@@ -60,14 +65,12 @@ public class mood {
         result.put("comments", comments);
         return result;
     }
-
 }
 
 class comment {
     private String content;
     private String commenter;
     public comment(String content, String commenter){
-
         this.content = content;
         this.commenter = commenter;
     }
@@ -75,7 +78,6 @@ class comment {
     public String getContent() {
         return content;
     }
-
 
     public String getCommenter() {
         return commenter;

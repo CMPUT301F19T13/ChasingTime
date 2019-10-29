@@ -15,12 +15,8 @@ public class User {
         this.email = email;
         this.nickname = nickname;
         this.friends = new ArrayList<>();
-
-        friends.add("");
         this.moods = new ArrayList<>();
-        this.moods.add("");
         this.AvatarPath = "";
-
     }
 
     public User(String email, String nickname, ArrayList<String> friends, ArrayList<String> moods, String AvatarPath){
@@ -31,7 +27,6 @@ public class User {
         this.AvatarPath = AvatarPath;
     }
 
-
     public User(){
         this.email = null;
         this.nickname = null;
@@ -40,7 +35,6 @@ public class User {
         this.AvatarPath = null;
         this.password = null;
     };
-
 
     public String getPassword() {
         return password;
@@ -101,7 +95,6 @@ public class User {
         return result;
     }
 
-
     public void setAvatarPath(String avatarPath) {
         AvatarPath = avatarPath;
     }
@@ -125,7 +118,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }
 
 

@@ -51,7 +51,6 @@ public class AddMoodActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 moods = (ArrayList<String>) dataSnapshot.child("moods").getValue();
                 if (moods == null){
-                    Toast.makeText(AddMoodActivity.this, "null moods", Toast.LENGTH_LONG).show();
                     moods = new ArrayList<>();
                 }
             }
