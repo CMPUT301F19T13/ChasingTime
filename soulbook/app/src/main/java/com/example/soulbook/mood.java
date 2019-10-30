@@ -21,8 +21,7 @@ public class mood {
         HashMap<String, Object> b = (HashMap)a.get("time");
         content = String.valueOf(a.get("content"));
         poster = String.valueOf(a.get("poster"));
-        Time = new time(Integer.parseInt(String.valueOf(b.get("year"))), Integer.parseInt(String.valueOf(b.get("month"))),Integer.parseInt(String.valueOf(b.get("day"))),Integer.parseInt(String.valueOf(b.get("hour"))),Integer.parseInt(String.valueOf(b.get("min"))));
-        Time = null;
+        Time = new time(b);
         comments = null;
         likes = new ArrayList<>();
     }
@@ -96,6 +95,14 @@ class time{
         this.year = year;
         this.month = month;
         this.min = min;
+    }
+
+    public time(HashMap a){
+        this.day = Integer.parseInt(String.valueOf(a.get("day")));
+        this.month = Integer.parseInt(String.valueOf(a.get("month")));
+        this.hour = Integer.parseInt(String.valueOf(a.get("hour")));
+        this.year = Integer.parseInt(String.valueOf(a.get("year")));
+        this.min = Integer.parseInt(String.valueOf(a.get("min")));
     }
 
     public String printTime() {
