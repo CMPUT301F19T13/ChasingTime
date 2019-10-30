@@ -31,7 +31,7 @@ public class moodListAdapter extends BaseAdapter {
     private ImageButton deleteButton, likeButton;
     private String nickname;
 
-    public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames, ArrayList<String> hours){
+    public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames){
         this.context = context;
         mLayoutInflater = LayoutInflater.from(context);
         this.moods = moods;
@@ -67,7 +67,7 @@ public class moodListAdapter extends BaseAdapter {
         mood thismood = moods.get(position);
         listViewNickName.setText(nicknames.get(position));
         listViewMoodText.setText(thismood.getContent());
-        listViewTime.setText(hours.get(position));
+        listViewTime.setText(thismood.getTime().printTime());
         return convertView;
 
     }

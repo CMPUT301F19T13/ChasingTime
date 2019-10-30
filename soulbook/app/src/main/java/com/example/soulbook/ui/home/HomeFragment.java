@@ -42,13 +42,12 @@ public class HomeFragment extends Fragment {
     ListView homepagemoodlist;
     ImageButton homepageAddmood;
     ArrayList<String> moods;
-    ArrayList<String> nicknames, hours;
+    ArrayList<String> nicknames;
     ArrayList<mood> moodlist;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         moods = new ArrayList<>();
         nicknames = new ArrayList<>();
         moodlist = new ArrayList<>();
-        hours = new ArrayList<>();
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -71,11 +70,10 @@ public class HomeFragment extends Fragment {
                         String posterId;
                         for (int i = 0; i < moods.size(); i++){
                             moodlist.add(new mood((HashMap)dataSnapshot.child("moods").child(moods.get(i)).getValue()));
-                            hours.add(dataSnapshot.child("moods").child(moods.get(i)).child("time").child("hour").getValue().toString());
                             posterId = dataSnapshot.child("moods").child(moods.get(i)).child("poster").getValue().toString();
                             nicknames.add(dataSnapshot.child("users").child(posterId).child("nickname").getValue().toString());
                         }
-                        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, hours));
+                        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames));
                     }
 
                     @Override
