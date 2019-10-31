@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment{
     private HomeViewModel homeViewModel;
     TextView homepageNickname, test;
     ListView homepagemoodlist;
@@ -45,7 +45,6 @@ public class HomeFragment extends Fragment {
     ArrayList<String> nicknames;
     ArrayList<mood> moodlist;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        moods = new ArrayList<>();
         nicknames = new ArrayList<>();
         moodlist = new ArrayList<>();
         homeViewModel =
@@ -59,9 +58,10 @@ public class HomeFragment extends Fragment {
                 test = root.findViewById(R.id.homepage_test);
                 homepageAddmood = root.findViewById(R.id.homepage_addmood);
                 final String UserId = FirebaseAuth.getInstance().getUid();
-                FirebaseDatabase.getInstance().getReference().addValueEventListener(new ValueEventListener() {
+                FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        moods = new ArrayList<>();
                         homepageNickname.setText(dataSnapshot.child("users").child(UserId).child("nickname").getValue().toString());
                         moods = (ArrayList<String>) dataSnapshot.child("users").child(UserId).child("moods").getValue();
                         if (moods == null){
@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment {
                             posterId = dataSnapshot.child("moods").child(moods.get(i)).child("poster").getValue().toString();
                             nicknames.add(dataSnapshot.child("users").child(posterId).child("nickname").getValue().toString());
                         }
-                        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames));
+                        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this));
                     }
 
                     @Override
@@ -85,12 +85,18 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getActivity(), AddMoodActivity.class));
-
                     }
                 });
             }
         });
         return root;
+    }
+
+    public void removemood(int postition){
+        moodlist.remove(postition);
+        nicknames.remove(postition);
+        moods.remove(postition);
+        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this));
     }
 
 }
