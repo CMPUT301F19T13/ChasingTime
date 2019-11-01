@@ -64,10 +64,9 @@ public class SignUpPage extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                                StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("users").child(uid);
-
                                 User newUser = new User(newemail.getText().toString(), newNickname.getText().toString(), stringPassword);
                                 FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(newUser.toMap());
+                                //FirebaseDatabase.getInstance().getReference().child("emailToId").child(newemail.getText().toString()).setValue(uid);
                                 Intent in = new Intent(SignUpPage.this, LogInPage.class);
                                 startActivity(in);
                             }

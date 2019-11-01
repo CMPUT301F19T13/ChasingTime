@@ -24,6 +24,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.soulbook.ui.dashboard.friend" />
+        <activity android:name="com.example.soulbook.ui.dashboard.message" />
         <activity android:name="com.example.soulbook.AddMoodActivity" />
         <activity android:name="com.example.soulbook.MainActivity" />
         <activity android:name="com.example.soulbook.SignUpPage" />

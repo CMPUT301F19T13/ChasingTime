@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
 MERGED from [androidx.navigation:navigation-ui:2.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\fd024e7501fdaa9df8bc62842321a697\jetified-navigation-ui-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\3df2fd68af0236fb7b1a24eeed8b503b\material-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\f8ccfb448ba3545203b2c9319e236e39\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -16,6 +16,7 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\tsz
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\be4c5dac795a59b41993a7b022ac3383\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-fragment:2.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\0a2e12051ef7d31a6ff3a66968d3b3fa\navigation-fragment-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\34a0f958f1a5c529752420354af1e004\lifecycle-extensions-2.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\b9799d70f08d6212f2bb67aeb995639d\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-analytics:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\5360419d4f2c78ee0a1ab88a2bb93fad\firebase-analytics-17.2.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c6759f075f7dacd9a34f2c4cacd81c5f\firebase-auth-interop-18.0.0\AndroidManifest.xml:2:1-10:12
@@ -44,6 +45,7 @@ MERGED from [androidx.navigation:navigation-runtime:2.0.0] C:\Users\tszw-pc\.gra
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\a2812e63738b1c43d88b94e2e3e83098\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\8b9f96df1a219288d5310a3f5ee0b475\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c6b5b70b38f5af6285523b36939a61d7\transition-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\f73554407891e5f42b5a27997e9f0ce3\media-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d98c89cf50bdd03f81aa09467d0c2ed3\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\f6b0e9e64ea6c67524e0872a7fe85f3e\activity-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\aa9ec5933c64a7f92a2e54256e9d183b\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -69,25 +71,25 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\tszw-pc\.gradl
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\2cbf8d7cb802848068f0a2d09c242a96\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\be0257405f31b1e356e15dc58d0cb3de\savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\a1c42ee6a43c1fec1cd0f12b759d080b\firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
 	package
 		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
 		INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
 		INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:5:5-22:19
+ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:5:5-24:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\3df2fd68af0236fb7b1a24eeed8b503b\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\3df2fd68af0236fb7b1a24eeed8b503b\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c77d2d7d2a36a76ceff3be3a10064bf2\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
@@ -152,32 +154,40 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\tszw-pc\.gradl
 		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:11:9-40
+activity#com.example.soulbook.ui.dashboard.friend
+ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:12:9-57
+	android:name
+		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:12:19-54
+activity#com.example.soulbook.ui.dashboard.message
+ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:13:9-58
+	android:name
+		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:13:19-55
 activity#com.example.soulbook.AddMoodActivity
-ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:12:9-62
+ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:14:9-53
 	android:name
-		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:12:19-50
+		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:14:19-50
 activity#com.example.soulbook.MainActivity
-ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:13:9-50
+ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:15:9-50
 	android:name
-		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:13:19-47
+		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:15:19-47
 activity#com.example.soulbook.SignUpPage
-ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:14:9-48
+ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:16:9-48
 	android:name
-		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:14:19-45
+		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:16:19-45
 activity#com.example.soulbook.LogInPage
-ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:15:9-21:20
+ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:17:9-23:20
 	android:name
-		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:15:19-44
+		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:17:19-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:16:13-20:29
+ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:17:17-69
+ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:19:17-69
 	android:name
-		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:17:25-66
+		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml:21:27-74
 uses-sdk
 INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\tszw-pc\soulbook\app\src\main\AndroidManifest.xml
@@ -206,6 +216,8 @@ MERGED from [androidx.navigation:navigation-fragment:2.0.0] C:\Users\tszw-pc\.gr
 MERGED from [androidx.navigation:navigation-fragment:2.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\0a2e12051ef7d31a6ff3a66968d3b3fa\navigation-fragment-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\34a0f958f1a5c529752420354af1e004\lifecycle-extensions-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\34a0f958f1a5c529752420354af1e004\lifecycle-extensions-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\b9799d70f08d6212f2bb67aeb995639d\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\b9799d70f08d6212f2bb67aeb995639d\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-analytics:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\5360419d4f2c78ee0a1ab88a2bb93fad\firebase-analytics-17.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\5360419d4f2c78ee0a1ab88a2bb93fad\firebase-analytics-17.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:19:5-21:41
@@ -262,6 +274,8 @@ MERGED from [androidx.loader:loader:1.0.0] C:\Users\tszw-pc\.gradle\caches\trans
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\8b9f96df1a219288d5310a3f5ee0b475\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c6b5b70b38f5af6285523b36939a61d7\transition-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c6b5b70b38f5af6285523b36939a61d7\transition-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\f73554407891e5f42b5a27997e9f0ce3\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\f73554407891e5f42b5a27997e9f0ce3\media-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d98c89cf50bdd03f81aa09467d0c2ed3\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d98c89cf50bdd03f81aa09467d0c2ed3\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\f6b0e9e64ea6c67524e0872a7fe85f3e\activity-1.0.0\AndroidManifest.xml:20:5-22:41
