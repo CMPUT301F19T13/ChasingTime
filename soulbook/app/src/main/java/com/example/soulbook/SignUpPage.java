@@ -51,13 +51,16 @@ public class SignUpPage extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //promote user input password when create an account
                 final String stringPassword = newPassword.getText().toString();
                 final String stringConfirmPassword = confirmPassword.getText().toString();
+                //check and confirm the password when user first time create the account
                 if (!stringConfirmPassword.equals(stringPassword)){
                     Toast.makeText(SignUpPage.this, "passwords are different, please try again: " + stringPassword + " :"+ stringConfirmPassword, Toast.LENGTH_LONG).show();
                     newPassword.setText("");
                     confirmPassword.setText("");
                 }
+                //user create an account successful so that save the username and password into firesbase database
                 else{
                     FirebaseAuth.getInstance().createUserWithEmailAndPassword(newemail.getText().toString(), newPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -70,8 +73,10 @@ public class SignUpPage extends AppCompatActivity {
                                 Intent in = new Intent(SignUpPage.this, LogInPage.class);
                                 startActivity(in);
                             }
+                            //handle the case that existed duplicate account
                             else{
                                 Toast.makeText(SignUpPage.this, "This email has been used", Toast.LENGTH_LONG).show();
+                                //promote user input a new email address and password
                                 newemail.setText("");
                                 newPassword.setText("");
                                 confirmPassword.setText("");
