@@ -27,7 +27,7 @@ public class mood {
     }
 
 
-
+    //some functionality of mood, such as add, delete comments, record the current time when sumbit the mood
     public time getTime() {
         return Time;
     }
@@ -96,7 +96,7 @@ class time{
         this.month = month;
         this.min = min;
     }
-
+    //get the time data
     public time(HashMap a){
         this.day = Integer.parseInt(String.valueOf(a.get("day")));
         this.month = Integer.parseInt(String.valueOf(a.get("month")));
@@ -104,7 +104,7 @@ class time{
         this.year = Integer.parseInt(String.valueOf(a.get("year")));
         this.min = Integer.parseInt(String.valueOf(a.get("min")));
     }
-
+    //regulate the time format
     public String printTime() {
         return month + " " + day + ", " +  year + ", " +  hour + ":" + min;
     }

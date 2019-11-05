@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuthException;
 //import com.google.firebase.auth.UserRecord;
 
 public class friend extends AppCompatActivity implements searchFriend.OnFragmentInteractionListener{
-
+    //class to handle all friend operations
     private ImageButton searchfriend, backbutton;
     private ListView friendlist;
 
