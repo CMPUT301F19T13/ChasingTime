@@ -36,14 +36,16 @@ public class moodListAdapter extends BaseAdapter {
     private ImageButton deleteButton, likeButton;
     private String nickname;
     private HomeFragment m;
+    private boolean ifshow;
 
-    public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames, ArrayList<String> moodId, HomeFragment m){
+    public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames, ArrayList<String> moodId, HomeFragment m, boolean show){
         this.m = m;
         this.context = context;
         mLayoutInflater = LayoutInflater.from(context);
         this.moods = moods;
         this.nicknames = nicknames;
         this.moodId = moodId;
+        ifshow = show;
     }
 
     @Override
@@ -77,6 +79,7 @@ public class moodListAdapter extends BaseAdapter {
         final String Id = moodId.get(position);
 
         likeButton.setVisibility(View.INVISIBLE);
+        listViewLikeList.setHeight(0);
 
         listViewEmoji.setText(new String(Character.toChars(emotionToEmojiUnicode(thismood.getEmotion()))));
         if (thismood.getPoster().equals(datasave.UserId)){
@@ -92,8 +95,13 @@ public class moodListAdapter extends BaseAdapter {
                 m.removemood(position);
             }
         });
+        if (ifshow){
+            listViewMoodText.setText(thismood.getContent());
+        }
+        else{
+            listViewMoodText.setHeight(0);
+        }
         listViewNickName.setText(nicknames.get(position));
-        listViewMoodText.setText(thismood.getContent());
         listViewTime.setText(thismood.getTime().printTime());
         return convertView;
     }

@@ -1278,6 +1278,7 @@ id homeAsUp
 id homepage_addmood
 id homepage_moodlist
 id homepage_nickname
+id homepage_showbutton
 id homepage_test
 id icon
 id icon_group

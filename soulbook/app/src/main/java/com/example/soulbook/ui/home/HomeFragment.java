@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,6 +45,8 @@ public class HomeFragment extends Fragment{
     ArrayList<String> moods;
     ArrayList<String> nicknames;
     ArrayList<mood> moodlist;
+    Button homepageShowButton;
+    boolean showDetail = false;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         nicknames = new ArrayList<>();
         moodlist = new ArrayList<>();
@@ -56,8 +59,22 @@ public class HomeFragment extends Fragment{
                 homepageNickname = root.findViewById(R.id.homepage_nickname);
                 homepagemoodlist = root.findViewById(R.id.homepage_moodlist);
                 test = root.findViewById(R.id.homepage_test);
+                homepageShowButton = root.findViewById(R.id.homepage_showbutton);
                 homepageAddmood = root.findViewById(R.id.homepage_addmood);
                 final String UserId = FirebaseAuth.getInstance().getUid();
+                homepageShowButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (showDetail){
+                            showDetail = false;
+                            homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
+                        }
+                        else{
+                            showDetail = true;
+                            homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
+                        }
+                    }
+                });
                 FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -73,7 +90,7 @@ public class HomeFragment extends Fragment{
                             posterId = dataSnapshot.child("moods").child(moods.get(i)).child("poster").getValue().toString();
                             nicknames.add(dataSnapshot.child("users").child(posterId).child("nickname").getValue().toString());
                         }
-                        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this));
+                        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
                     }
 
                     @Override
@@ -96,7 +113,7 @@ public class HomeFragment extends Fragment{
         moodlist.remove(postition);
         nicknames.remove(postition);
         moods.remove(postition);
-        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this));
+        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
     }
 
 }
