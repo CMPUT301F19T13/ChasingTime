@@ -56,4 +56,21 @@
         android:id="@+id/addmoodpage_content"
         android:gravity="left|top"/>
 
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/emotions"
+            android:id="@+id/addmoodpage_emotionspinner"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addmoodpage_location"
+            android:text="get my location"/>
+    </LinearLayout>
+
 </LinearLayout>

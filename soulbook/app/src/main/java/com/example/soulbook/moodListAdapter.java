@@ -32,7 +32,7 @@ public class moodListAdapter extends BaseAdapter {
     ArrayList<String> nicknames, moodId;
     private LayoutInflater mLayoutInflater;
     private ImageView listViewAvatar;
-    private TextView listViewNickName, listViewMoodText, listViewTime, listViewLocation, listViewLikeList;
+    private TextView listViewNickName, listViewMoodText, listViewTime, listViewLocation, listViewLikeList, listViewEmoji;
     private ImageButton deleteButton, likeButton;
     private String nickname;
     private HomeFragment m;
@@ -64,6 +64,7 @@ public class moodListAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         convertView = mLayoutInflater.inflate(R.layout.mood_view_content, null);
+        listViewEmoji = convertView.findViewById(R.id.listview_emoji);
         listViewAvatar = convertView.findViewById(R.id.listview_avatar);
         listViewNickName = convertView.findViewById(R.id.listview_nickname);
         listViewMoodText = convertView.findViewById(R.id.listview_mood_text);
@@ -74,6 +75,10 @@ public class moodListAdapter extends BaseAdapter {
         likeButton = convertView.findViewById(R.id.listview_like_button);
         final mood thismood = moods.get(position);
         final String Id = moodId.get(position);
+
+        likeButton.setVisibility(View.INVISIBLE);
+
+        listViewEmoji.setText(new String(Character.toChars(emotionToEmojiUnicode(thismood.getEmotion()))));
         if (thismood.getPoster().equals(datasave.UserId)){
             deleteButton.setVisibility(View.VISIBLE);
         }
@@ -91,6 +96,26 @@ public class moodListAdapter extends BaseAdapter {
         listViewMoodText.setText(thismood.getContent());
         listViewTime.setText(thismood.getTime().printTime());
         return convertView;
+    }
+
+    public int emotionToEmojiUnicode(String emotion){
+        switch (emotion){
+            case "Happiness":
+                return 0x1F603;
+            case "Fear":
+                return 0x1F628;
+            case "Sadness":
+                return 0x1F62D;
+            case "Anger":
+                return 0x1F620;
+            case "Surprise":
+                return 0x1F603;
+            case "Disgust":
+                return 0x1F635;
+            case "Excitement":
+                return 0x1F606;
+        }
+        return 0x1F251;
     }
 
 }

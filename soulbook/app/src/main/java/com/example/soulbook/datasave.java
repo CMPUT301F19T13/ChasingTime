@@ -18,6 +18,8 @@ public class datasave {
     public static User thisuser = new User();
     public static String UserId = "未读取";
     private ArrayList<String> moods;
+    public static String[] emotions = {"Happiness", "Fear", "Sadness", "Anger", "Surprise", "Disgust", "Excitement"};
+    public static int[] emoji = {0x1F603, 0x1F628, 0x1F62D ,0x1F620, 0x1F603, 0x1F635, 0x1F606};
     public static DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     //constructor
     public datasave(){

@@ -9,12 +9,14 @@ public class mood {
     private time Time;
     private ArrayList<comment> comments;
     private ArrayList<String> likes;
-    public mood(String content, String poster, time time){
+    private String emotion;
+    public mood(String content, String poster, time time, String emotion){
         this.content = content;
         this.poster = poster;
         this.Time = time;
         comments = null;
         likes = null;
+        this.emotion = emotion;
     }
 
     public mood(HashMap<String, Object> a){
@@ -24,6 +26,7 @@ public class mood {
         Time = new time(b);
         comments = null;
         likes = new ArrayList<>();
+        emotion = String.valueOf(a.get("emotion"));
     }
 
 
@@ -34,6 +37,10 @@ public class mood {
 
     public String getPoster() {
         return poster;
+    }
+
+    public String getEmotion() {
+        return emotion;
     }
 
     public String getContent() {
@@ -62,6 +69,7 @@ public class mood {
         result.put("poster", poster);
         result.put("time", Time);
         result.put("comments", comments);
+        result.put("emotion", emotion);
         return result;
     }
 }

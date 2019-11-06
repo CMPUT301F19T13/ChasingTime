@@ -41,6 +41,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array emotions
 attr action
 attr actionBarDivider
 attr actionBarItemBackground
@@ -1206,6 +1207,8 @@ id add
 id addmoodpage_addmood
 id addmoodpage_back
 id addmoodpage_content
+id addmoodpage_emotionspinner
+id addmoodpage_location
 id addmoodpage_nickname
 id adjust_height
 id adjust_width
@@ -1295,6 +1298,7 @@ id listMode
 id list_item
 id listview_avatar
 id listview_delete_mood
+id listview_emoji
 id listview_like_button
 id listview_like_list
 id listview_location
