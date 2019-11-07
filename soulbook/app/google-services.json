@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "514742518443-rifgufus5neqhjo0b2v4d6diugfbollu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.soulbook",
+            "certificate_hash": "59f7a24818a544b2d07e66e44d861e38877a5fb5"
+          }
+        },
+        {
           "client_id": "514742518443-7c155udvnstiuom6j2gqscm6qunna56f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

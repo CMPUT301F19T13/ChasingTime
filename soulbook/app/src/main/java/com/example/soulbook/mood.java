@@ -9,14 +9,16 @@ public class mood {
     private time Time;
     private ArrayList<comment> comments;
     private ArrayList<String> likes;
+    private int photonumber;
     private String emotion;
-    public mood(String content, String poster, time time, String emotion){
+    public mood(String content, String poster, time time, String emotion, int n){
         this.content = content;
         this.poster = poster;
         this.Time = time;
         comments = null;
         likes = null;
         this.emotion = emotion;
+        photonumber = n;
     }
 
     public mood(HashMap<String, Object> a){
@@ -27,8 +29,12 @@ public class mood {
         comments = null;
         likes = new ArrayList<>();
         emotion = String.valueOf(a.get("emotion"));
+        photonumber =  Integer.parseInt(String.valueOf(a.get("photos")));
     }
 
+    public int getPhotonumber() {
+        return photonumber;
+    }
 
     //some functionality of mood, such as add, delete comments, record the current time when sumbit the mood
     public time getTime() {
@@ -41,6 +47,11 @@ public class mood {
 
     public String getEmotion() {
         return emotion;
+    }
+
+    public void setPhotonumber(int n){
+        photonumber = n;
+
     }
 
     public String getContent() {
@@ -70,6 +81,7 @@ public class mood {
         result.put("time", Time);
         result.put("comments", comments);
         result.put("emotion", emotion);
+        result.put("photos", photonumber);
         return result;
     }
 }

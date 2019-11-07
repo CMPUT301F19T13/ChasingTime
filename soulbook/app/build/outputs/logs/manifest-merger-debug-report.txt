@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-35:12
 MERGED from [androidx.navigation:navigation-ui:2.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\fd024e7501fdaa9df8bc62842321a697\jetified-navigation-ui-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\3df2fd68af0236fb7b1a24eeed8b503b\material-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\f8ccfb448ba3545203b2c9319e236e39\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c77d2d7d2a36a76ceff3be3a10064bf2\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c863307d37dfc8f7c794c3c934b2cdaa\firebase-auth-19.0.0\AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\5ed713a0ff70c0fa26615302da95891f\play-services-auth-17.0.0\AndroidManifest.xml:17:1-39:12
-MERGED from [com.google.firebase:firebase-storage:16.0.4] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\4aeedd3656e3acd319c690093688832c\jetified-firebase-storage-16.0.4\AndroidManifest.xml:15:1-26:12
+MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:15:1-37:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\2e03c2f92899d54dc944727484d22c64\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\1d2af3d333d4c3a45bf618d6c3d7e76d\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\be4c5dac795a59b41993a7b022ac3383\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -71,25 +71,67 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\tszw-pc\.gradl
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\2cbf8d7cb802848068f0a2d09c242a96\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\be0257405f31b1e356e15dc58d0cb3de\savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\a1c42ee6a43c1fec1cd0f12b759d080b\firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
-INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
 		INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-35:12
 		INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:1-35:12
 		INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:5:5-97
+	android:name
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:5:22-78
+uses-permission#android.permission.CAMERA
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:6:5-65
+	android:name
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:6:22-62
+uses-feature#android.hardware.camera
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:7:5-60
+	android:name
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:7:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:8:5-70
+	android:name
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:8:19-67
+uses-permission#android.permission.FLASHLIGHT
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:10:5-69
+	android:name
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:10:22-66
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:11:22-77
+uses-permission#android.permission.INTERNET
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:12:5-67
+MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\28c1ceda9eb72d23d1907429a7dd5035\play-services-measurement-api-17.2.0\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\28c1ceda9eb72d23d1907429a7dd5035\play-services-measurement-api-17.2.0\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:19.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\6cfe46f408152b0cf1be5d6c31bb25ab\firebase-iid-19.0.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:19.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\6cfe46f408152b0cf1be5d6c31bb25ab\firebase-iid-19.0.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7c4237e0029812955685234cfce19139\play-services-measurement-17.2.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7c4237e0029812955685234cfce19139\play-services-measurement-17.2.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7b6b88ecf3a259024a45d2a41b617e9c\play-services-measurement-impl-17.2.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7b6b88ecf3a259024a45d2a41b617e9c\play-services-measurement-impl-17.2.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7f05f94b4641f7f51c8a5c4e3ed4099f\play-services-measurement-sdk-api-17.2.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7f05f94b4641f7f51c8a5c4e3ed4099f\play-services-measurement-sdk-api-17.2.0\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:12:22-64
 application
-ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:5:5-24:19
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:14:5-33:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\3df2fd68af0236fb7b1a24eeed8b503b\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\3df2fd68af0236fb7b1a24eeed8b503b\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c77d2d7d2a36a76ceff3be3a10064bf2\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
@@ -98,6 +140,8 @@ MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\tszw-pc\.gradle\
 MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c863307d37dfc8f7c794c3c934b2cdaa\firebase-auth-19.0.0\AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\5ed713a0ff70c0fa26615302da95891f\play-services-auth-17.0.0\AndroidManifest.xml:22:5-37:19
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\5ed713a0ff70c0fa26615302da95891f\play-services-auth-17.0.0\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:29:5-35:19
+MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:29:5-35:19
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\34a0f958f1a5c529752420354af1e004\lifecycle-extensions-2.0.0\AndroidManifest.xml:22:5-23:19
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\34a0f958f1a5c529752420354af1e004\lifecycle-extensions-2.0.0\AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.firebase:firebase-analytics:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\5360419d4f2c78ee0a1ab88a2bb93fad\firebase-analytics-17.2.0\AndroidManifest.xml:7:5-20
@@ -143,51 +187,51 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\tszw-pc\.gradl
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\56b6cdfbd80af409835a31a4470c49f0\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:19:9-35
 	android:label
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:17:9-41
 	android:roundIcon
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:18:9-54
 	android:icon
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:16:9-43
 	android:allowBackup
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:15:9-35
 	android:theme
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:20:9-40
 activity#com.example.soulbook.ui.dashboard.friend
-ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:12:9-57
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:21:9-57
 	android:name
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:12:19-54
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:21:19-54
 activity#com.example.soulbook.ui.dashboard.message
-ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:13:9-58
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:22:9-58
 	android:name
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:13:19-55
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:22:19-55
 activity#com.example.soulbook.AddMoodActivity
-ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:14:9-53
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:23:9-53
 	android:name
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:14:19-50
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:23:19-50
 activity#com.example.soulbook.MainActivity
-ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:15:9-50
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:24:9-50
 	android:name
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:15:19-47
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:24:19-47
 activity#com.example.soulbook.SignUpPage
-ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:16:9-48
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:25:9-48
 	android:name
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:16:19-45
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:25:19-45
 activity#com.example.soulbook.LogInPage
-ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:17:9-23:20
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:26:9-32:20
 	android:name
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:17:19-44
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:26:19-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:18:13-22:29
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:19:17-69
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:19:25-66
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:21:17-77
+ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:21:27-74
+		ADDED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:30:27-74
 uses-sdk
 INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
@@ -204,8 +248,8 @@ MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\tszw-pc\.gradle\
 MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c863307d37dfc8f7c794c3c934b2cdaa\firebase-auth-19.0.0\AndroidManifest.xml:21:5-44
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\5ed713a0ff70c0fa26615302da95891f\play-services-auth-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\5ed713a0ff70c0fa26615302da95891f\play-services-auth-17.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-storage:16.0.4] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\4aeedd3656e3acd319c690093688832c\jetified-firebase-storage-16.0.4\AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-storage:16.0.4] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\4aeedd3656e3acd319c690093688832c\jetified-firebase-storage-16.0.4\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\2e03c2f92899d54dc944727484d22c64\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\2e03c2f92899d54dc944727484d22c64\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\1d2af3d333d4c3a45bf618d6c3d7e76d\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -354,6 +398,8 @@ ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\tszw-pc\.gradle\c
 		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c863307d37dfc8f7c794c3c934b2cdaa\firebase-auth-19.0.0\AndroidManifest.xml:25:13-85
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\c863307d37dfc8f7c794c3c934b2cdaa\firebase-auth-19.0.0\AndroidManifest.xml:33:9-39:19
+MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:30:9-34:19
+MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:30:9-34:19
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\28c1ceda9eb72d23d1907429a7dd5035\play-services-measurement-api-17.2.0\AndroidManifest.xml:27:9-33:19
@@ -393,7 +439,7 @@ ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\tszw-pc\.
 	android:name
 		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\5ed713a0ff70c0fa26615302da95891f\play-services-auth-17.0.0\AndroidManifest.xml:34:13-89
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.firebase:firebase-storage:16.0.4] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\4aeedd3656e3acd319c690093688832c\jetified-firebase-storage-16.0.4\AndroidManifest.xml:23:5-79
+ADDED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:25:5-79
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:25:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\28c1ceda9eb72d23d1907429a7dd5035\play-services-measurement-api-17.2.0\AndroidManifest.xml:23:5-79
@@ -407,23 +453,13 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7f05f94b4641f7f51c8a5c4e3ed4099f\play-services-measurement-sdk-api-17.2.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7f05f94b4641f7f51c8a5c4e3ed4099f\play-services-measurement-sdk-api-17.2.0\AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from [com.google.firebase:firebase-storage:16.0.4] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\4aeedd3656e3acd319c690093688832c\jetified-firebase-storage-16.0.4\AndroidManifest.xml:23:22-76
-uses-permission#android.permission.INTERNET
-ADDED from [com.google.firebase:firebase-storage:16.0.4] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\4aeedd3656e3acd319c690093688832c\jetified-firebase-storage-16.0.4\AndroidManifest.xml:24:5-67
-MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:26:5-67
-MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:26:5-67
-MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\28c1ceda9eb72d23d1907429a7dd5035\play-services-measurement-api-17.2.0\AndroidManifest.xml:22:5-67
-MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\28c1ceda9eb72d23d1907429a7dd5035\play-services-measurement-api-17.2.0\AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-iid:19.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\6cfe46f408152b0cf1be5d6c31bb25ab\firebase-iid-19.0.0\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:19.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\6cfe46f408152b0cf1be5d6c31bb25ab\firebase-iid-19.0.0\AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7c4237e0029812955685234cfce19139\play-services-measurement-17.2.0\AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7c4237e0029812955685234cfce19139\play-services-measurement-17.2.0\AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7b6b88ecf3a259024a45d2a41b617e9c\play-services-measurement-impl-17.2.0\AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7b6b88ecf3a259024a45d2a41b617e9c\play-services-measurement-impl-17.2.0\AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7f05f94b4641f7f51c8a5c4e3ed4099f\play-services-measurement-sdk-api-17.2.0\AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7f05f94b4641f7f51c8a5c4e3ed4099f\play-services-measurement-sdk-api-17.2.0\AndroidManifest.xml:23:5-67
+		ADDED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:26:22-76
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:31:13-33:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:33:17-82
 	android:name
-		ADDED from [com.google.firebase:firebase-storage:16.0.4] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\4aeedd3656e3acd319c690093688832c\jetified-firebase-storage-16.0.4\AndroidManifest.xml:24:22-64
+		ADDED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\d08d497df622fd478312ba44e1529be8\jetified-firebase-storage-17.0.0\AndroidManifest.xml:32:17-107
 meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
 ADDED from [com.google.firebase:firebase-database:19.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:32:13-34:85
 	android:value

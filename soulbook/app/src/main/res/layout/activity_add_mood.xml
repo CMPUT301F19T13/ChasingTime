@@ -73,4 +73,63 @@
             android:text="get my location"/>
     </LinearLayout>
 
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/photo1"
+            android:scaleType="fitXY"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/photo2"
+            android:scaleType="fitXY"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/photo3"
+            android:scaleType="fitXY"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/photo4"
+            android:scaleType="fitXY"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/photo5"
+            android:scaleType="fitXY"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/photo6"
+            android:scaleType="fitXY"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/photo7"
+            android:scaleType="fitXY"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/photo8"
+            android:scaleType="fitXY"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/photo9"
+            android:scaleType="fitXY"/>
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/addphoto"
+            android:scaleType="fitXY"
+            android:background="@color/colorTransparency"
+            android:id="@+id/addphoto"/>
+    </LinearLayout>
 </LinearLayout>

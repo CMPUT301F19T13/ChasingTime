@@ -1073,6 +1073,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable add
+drawable addphoto
 drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
@@ -1210,6 +1211,7 @@ id addmoodpage_content
 id addmoodpage_emotionspinner
 id addmoodpage_location
 id addmoodpage_nickname
+id addphoto
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1306,6 +1308,15 @@ id listview_location
 id listview_mood_text
 id listview_mood_time
 id listview_nickname
+id listview_photo1
+id listview_photo2
+id listview_photo3
+id listview_photo4
+id listview_photo5
+id listview_photo6
+id listview_photo7
+id listview_photo8
+id listview_photo9
 id loginButton
 id masked
 id media_actions
@@ -1345,6 +1356,15 @@ id parentPanel
 id parent_matrix
 id password
 id percent
+id photo1
+id photo2
+id photo3
+id photo4
+id photo5
+id photo6
+id photo7
+id photo8
+id photo9
 id pin
 id progress_circular
 id progress_horizontal
