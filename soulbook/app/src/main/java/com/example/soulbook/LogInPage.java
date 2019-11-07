@@ -32,16 +32,17 @@ public class LogInPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //after click the login button
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in_page);
 
         mAuth = FirebaseAuth.getInstance();
-
+        //getting the input information
         useremail = findViewById(R.id.userEmail);
         password = findViewById(R.id.password);
         login = findViewById(R.id.loginButton);
         signup = findViewById(R.id.signUpButton);
-
+        //connect to firebase database
         DataBase = FirebaseDatabase.getInstance().getReference();
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -59,9 +60,12 @@ public class LogInPage extends AppCompatActivity {
             public void onClick(View v) {
                 final String userEmail = useremail.getText().toString();
                 final String passWord = password.getText().toString();
+                //if the input email is empty
                 if (userEmail == ""){
                     Toast.makeText(LogInPage.this, "Please enter an email", Toast.LENGTH_LONG).show();
                 }
+
+                //if the input password is empty
                 else if(passWord == ""){
                     Toast.makeText(LogInPage.this, "Please enter a password", Toast.LENGTH_LONG).show();
                 }
@@ -69,6 +73,7 @@ public class LogInPage extends AppCompatActivity {
                     mAuth.signInWithEmailAndPassword(userEmail, passWord).addOnCompleteListener(LogInPage.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
+                                    //the input email and password is correct
                                     if (task.isSuccessful()) {
                                         String UserId = FirebaseAuth.getInstance().getUid();
                                         FirebaseDatabase.getInstance().getReference().child("users").child(UserId).addValueEventListener(new ValueEventListener() {

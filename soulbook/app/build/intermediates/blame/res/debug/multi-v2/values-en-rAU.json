@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\tszw-pc\\soulbook\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
+            "outputFile": "D:\\ChasingTime\\soulbook\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
             "map": [
                 {
                     "source": "C:\\Users\\tszw-pc\\.gradle\\caches\\transforms-2\\files-2.1\\fd024e7501fdaa9df8bc62842321a697\\jetified-navigation-ui-2.0.0\\res\\values-en-rAU\\values-en-rAU.xml",

@@ -9,32 +9,49 @@ public class mood {
     private time Time;
     private ArrayList<comment> comments;
     private ArrayList<String> likes;
-    public mood(String content, String poster, time time){
+    private int photonumber;
+    private String emotion;
+    public mood(String content, String poster, time time, String emotion, int n){
         this.content = content;
         this.poster = poster;
         this.Time = time;
         comments = null;
         likes = null;
+        this.emotion = emotion;
+        photonumber = n;
     }
 
     public mood(HashMap<String, Object> a){
         HashMap<String, Object> b = (HashMap)a.get("time");
         content = String.valueOf(a.get("content"));
         poster = String.valueOf(a.get("poster"));
-        Time = new time(Integer.parseInt(String.valueOf(b.get("year"))), Integer.parseInt(String.valueOf(b.get("month"))),Integer.parseInt(String.valueOf(b.get("day"))),Integer.parseInt(String.valueOf(b.get("hour"))),Integer.parseInt(String.valueOf(b.get("min"))));
-        Time = null;
+        Time = new time(b);
         comments = null;
         likes = new ArrayList<>();
+        emotion = String.valueOf(a.get("emotion"));
+        photonumber =  Integer.parseInt(String.valueOf(a.get("photos")));
     }
 
+    public int getPhotonumber() {
+        return photonumber;
+    }
 
-
+    //some functionality of mood, such as add, delete comments, record the current time when sumbit the mood
     public time getTime() {
         return Time;
     }
 
     public String getPoster() {
         return poster;
+    }
+
+    public String getEmotion() {
+        return emotion;
+    }
+
+    public void setPhotonumber(int n){
+        photonumber = n;
+
     }
 
     public String getContent() {
@@ -63,6 +80,8 @@ public class mood {
         result.put("poster", poster);
         result.put("time", Time);
         result.put("comments", comments);
+        result.put("emotion", emotion);
+        result.put("photos", photonumber);
         return result;
     }
 }
@@ -97,7 +116,15 @@ class time{
         this.month = month;
         this.min = min;
     }
-
+    //get the time data
+    public time(HashMap a){
+        this.day = Integer.parseInt(String.valueOf(a.get("day")));
+        this.month = Integer.parseInt(String.valueOf(a.get("month")));
+        this.hour = Integer.parseInt(String.valueOf(a.get("hour")));
+        this.year = Integer.parseInt(String.valueOf(a.get("year")));
+        this.min = Integer.parseInt(String.valueOf(a.get("min")));
+    }
+    //regulate the time format
     public String printTime() {
         return month + " " + day + ", " +  year + ", " +  hour + ":" + min;
     }

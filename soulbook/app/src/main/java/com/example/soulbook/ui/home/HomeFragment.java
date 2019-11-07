@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -32,23 +33,24 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment{
     private HomeViewModel homeViewModel;
     TextView homepageNickname, test;
     ListView homepagemoodlist;
     ImageButton homepageAddmood;
     ArrayList<String> moods;
-    ArrayList<String> nicknames, hours;
+    ArrayList<String> nicknames;
     ArrayList<mood> moodlist;
+    Button homepageShowButton;
+    boolean showDetail = false;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        moods = new ArrayList<>();
         nicknames = new ArrayList<>();
         moodlist = new ArrayList<>();
-        hours = new ArrayList<>();
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -58,11 +60,26 @@ public class HomeFragment extends Fragment {
                 homepageNickname = root.findViewById(R.id.homepage_nickname);
                 homepagemoodlist = root.findViewById(R.id.homepage_moodlist);
                 test = root.findViewById(R.id.homepage_test);
+                homepageShowButton = root.findViewById(R.id.homepage_showbutton);
                 homepageAddmood = root.findViewById(R.id.homepage_addmood);
                 final String UserId = FirebaseAuth.getInstance().getUid();
-                FirebaseDatabase.getInstance().getReference().addValueEventListener(new ValueEventListener() {
+                homepageShowButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (showDetail){
+                            showDetail = false;
+                            homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
+                        }
+                        else{
+                            showDetail = true;
+                            homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
+                        }
+                    }
+                });
+                FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        moods = new ArrayList<>();
                         homepageNickname.setText(dataSnapshot.child("users").child(UserId).child("nickname").getValue().toString());
                         moods = (ArrayList<String>) dataSnapshot.child("users").child(UserId).child("moods").getValue();
                         if (moods == null){
@@ -71,11 +88,10 @@ public class HomeFragment extends Fragment {
                         String posterId;
                         for (int i = 0; i < moods.size(); i++){
                             moodlist.add(new mood((HashMap)dataSnapshot.child("moods").child(moods.get(i)).getValue()));
-                            hours.add(dataSnapshot.child("moods").child(moods.get(i)).child("time").child("hour").getValue().toString());
                             posterId = dataSnapshot.child("moods").child(moods.get(i)).child("poster").getValue().toString();
                             nicknames.add(dataSnapshot.child("users").child(posterId).child("nickname").getValue().toString());
                         }
-                        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, hours));
+                        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
                     }
 
                     @Override
@@ -87,12 +103,20 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getActivity(), AddMoodActivity.class));
-
                     }
                 });
             }
         });
         return root;
+    }
+
+    public void removemood(int postition){
+        moodlist.remove(postition);
+        nicknames.remove(postition);
+        FirebaseDatabase.getInstance().getReference().child("moods").child(moods.get(postition)).setValue(null);
+        moods.remove(postition);
+        FirebaseDatabase.getInstance().getReference().child("users").child("moods").setValue(moods);
+        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
     }
 
 }
