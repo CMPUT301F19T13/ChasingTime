@@ -13,6 +13,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+/**
+ * This is for data uploading to firebase database
+ */
 public class datasave {
     //save new username
     public static User thisuser = new User();
@@ -21,10 +24,19 @@ public class datasave {
     public static String[] emotions = {"Happiness", "Fear", "Sadness", "Anger", "Surprise", "Disgust", "Excitement"};
     public static int[] emoji = {0x1F603, 0x1F628, 0x1F62D ,0x1F620, 0x1F603, 0x1F635, 0x1F606};
     public static DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-    //constructor
+    /**
+     * constructor
+     */
     public datasave(){
     }
-    //method to delete a current mood
+
+    /**
+     * a method to delete a current existing mood
+     * @param m
+     *   mood m
+     * @param moodId
+     *   moodId of this mood
+     */
     public void removemood(mood m, String moodId){
         final String UserId = m.getPoster();
         final String Id = moodId;
@@ -45,6 +57,13 @@ public class datasave {
         database.child("moods").child(moodId).setValue(null);
     }
 
+    /**
+     * a method to get user's nickname given ID
+     * @param Id
+     *   user's ID
+     * @return
+     *   Return to the desired nickname
+     */
     public String getNicknameById(String Id){
         final String[] result = new String[1];
         database.child("users").child(Id).child("nickname").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -62,6 +81,15 @@ public class datasave {
         return result[0];
     }
 
+    /**
+     * a method to get user's ID by email address
+     * @param email
+     *   user's email address
+     * @param context
+     *  a useful context for Toast
+     * @return
+     *   return the user's ID
+     */
     public String getIdByEmail(final String email, final Context context){
         final String[] result = new String[1];
         database.addListenerForSingleValueEvent(new ValueEventListener() {

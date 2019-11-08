@@ -22,6 +22,9 @@ import androidx.navigation.ui.NavigationUI;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This is the main activity of the app
+ */
 public class MainActivity extends AppCompatActivity {
 
 

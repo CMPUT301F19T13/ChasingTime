@@ -23,6 +23,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+/**
+ * this activity can sign up a new user account for user
+ */
 public class SignUpPage extends AppCompatActivity {
 
     private EditText newemail, newPassword, confirmPassword, newNickname;
@@ -30,6 +33,10 @@ public class SignUpPage extends AppCompatActivity {
     private DatabaseReference DataBase;
 
     @Override
+    /**
+     * user can sign up a new user account when user input a email address that not use yet,input a password,confirm the password again and set a nickname
+     * print sign up fail if the email address has been used
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_page);
@@ -42,6 +49,9 @@ public class SignUpPage extends AppCompatActivity {
         DataBase = FirebaseDatabase.getInstance().getReference();
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
+            /**
+             * go into log in activity from sign up activity
+             */
             public void onClick(View v) {
                 Intent in = new Intent(SignUpPage.this, LogInPage.class);
                 startActivity(in);
@@ -50,6 +60,10 @@ public class SignUpPage extends AppCompatActivity {
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
+            /**
+             * set the password for new user account
+             * password set fail if two times input different password
+             */
             public void onClick(View v) {
                 //promote user input password when create an account
                 final String stringPassword = newPassword.getText().toString();
@@ -64,6 +78,10 @@ public class SignUpPage extends AppCompatActivity {
                 else{
                     FirebaseAuth.getInstance().createUserWithEmailAndPassword(newemail.getText().toString(), newPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
+                        /**
+                         * finish create a new user account
+                         * user account create fail if email address has been used.
+                         */
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();

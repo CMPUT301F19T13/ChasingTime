@@ -20,7 +20,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
-import com.bumptech.glide.Glide;
 import com.example.soulbook.ui.home.HomeFragment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -36,6 +35,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * this is an adapter for moodlist, where
+ */
 public class moodListAdapter extends BaseAdapter {
     private Context context;
     ArrayList<mood> moods;
@@ -47,7 +49,7 @@ public class moodListAdapter extends BaseAdapter {
     private String nickname;
     private HomeFragment m;
     private boolean ifshow;
-    ArrayList<Uri> photoUri;
+    ArrayList<File> photoFile;
 
     public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames, ArrayList<String> moodId, HomeFragment m, boolean show){
         this.m = m;
@@ -96,14 +98,21 @@ public class moodListAdapter extends BaseAdapter {
         photos[7] = convertView.findViewById(R.id.listview_photo8);
         photos[8] = convertView.findViewById(R.id.listview_photo9);
         LinearLayout.LayoutParams mParams = new LinearLayout.LayoutParams(0,0);
-        LinearLayout.LayoutParams mParams2 = new LinearLayout.LayoutParams(300,300);
+        LinearLayout.LayoutParams mParams2 = new LinearLayout.LayoutParams(150,150);
         for (int i = 0 ;i < 9; i++){
             photos[i].setLayoutParams(mParams);
         }
         final mood thismood = moods.get(moods.size() - 1 - position);
         final String Id = moodId.get(moods.size() - 1 - position);
+        try {
+            photoFile = getMoodphotos(Id, thismood);
+        } catch (IOException e) {
+            Toast.makeText(context,"get photo fail", Toast.LENGTH_LONG).show();
+        }
+        //Toast.makeText(context,String.valueOf(thismood.getPhotonumber() + ":" + photoFile.size()), Toast.LENGTH_LONG).show();
         likeButton.setVisibility(View.INVISIBLE);
         listViewLikeList.setHeight(0);
+
         listViewEmoji.setText(new String(Character.toChars(emotionToEmojiUnicode(thismood.getEmotion()))));
         if (thismood.getPoster().equals(datasave.UserId)){
             deleteButton.setVisibility(View.VISIBLE);
@@ -122,7 +131,7 @@ public class moodListAdapter extends BaseAdapter {
             listViewMoodText.setText(thismood.getContent());
             for (int i = 0; i <thismood.getPhotonumber(); i++){
                 photos[i].setLayoutParams(mParams2);
-                setImageView(Id, thismood, photos[i], i);
+                photos[i].setImageURI(Uri.parse(photoFile.get(i).toString()));
             }
         }
         else{
@@ -153,16 +162,29 @@ public class moodListAdapter extends BaseAdapter {
         return 0x1F251;
     }
 
-
-    private void setImageView(String moodId, mood m, final ImageView iv, int i){
-        StorageReference s = FirebaseStorage.getInstance().getReference().child("moodphoto").child(moodId).child(i + ".jpg");
-        s.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Glide.with(context)
-                        .load(uri)
-                        .into(iv);
-            }
-        });
+    /**
+     * a method to get photos of a mood
+     * @param moodId
+     *   Id of the mood
+     * @param m
+     *   mood m
+     * @return
+     * @throws IOException
+     */
+    private ArrayList<File> getMoodphotos(String moodId, mood m) throws IOException {
+        StorageReference a = FirebaseStorage.getInstance().getReference().child("moodphoto").child(moodId);
+        final ArrayList<File> result = new ArrayList<>();
+        final File localFile = File.createTempFile("image", ".jpg");
+        int number = m.getPhotonumber();
+        for (int i = 0 ; i < number; i++){
+            a.child(i+".jpg").getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                }
+            });
+            result.add(localFile);
+        }
+        return result;
     }
+
 }
