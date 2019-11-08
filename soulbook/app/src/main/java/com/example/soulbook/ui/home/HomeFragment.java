@@ -115,7 +115,7 @@ public class HomeFragment extends Fragment{
         nicknames.remove(postition);
         FirebaseDatabase.getInstance().getReference().child("moods").child(moods.get(postition)).setValue(null);
         moods.remove(postition);
-        FirebaseDatabase.getInstance().getReference().child("users").child("moods").setValue(moods);
+        FirebaseDatabase.getInstance().getReference().child("users").child(datasave.UserId).child("moods")setValue(moods);
         homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
     }
 
