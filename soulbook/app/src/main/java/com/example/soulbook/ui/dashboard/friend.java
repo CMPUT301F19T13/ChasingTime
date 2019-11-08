@@ -16,6 +16,13 @@ import com.example.soulbook.datasave;
 import com.google.firebase.auth.FirebaseAuthException;
 //import com.google.firebase.auth.UserRecord;
 
+/**
+ * This is a class that shows the interface of the frined section in dashboard.
+ * This class used to search for friends and shows the list of all your friends.
+ * This connects the friends section from design to code.
+ * This part is not complete.
+ */
+
 public class friend extends AppCompatActivity implements searchFriend.OnFragmentInteractionListener{
     //class to handle all friend operations
     private ImageButton searchfriend, backbutton;
