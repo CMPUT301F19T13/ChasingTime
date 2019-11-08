@@ -6,6 +6,10 @@ import android.os.Bundle;
 
 import com.example.soulbook.R;
 
+/**
+ * This is a class that shows the interface of message in dashboard
+ */
+
 public class message extends AppCompatActivity {
 
     @Override
