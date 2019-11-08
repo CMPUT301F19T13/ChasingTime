@@ -20,6 +20,10 @@ import android.widget.EditText;
 
 import com.example.soulbook.R;
 
+/**
+ * This is a class that implements search for friends function
+ */
+
 public class searchFriend extends DialogFragment {
 
     private OnFragmentInteractionListener listener;
