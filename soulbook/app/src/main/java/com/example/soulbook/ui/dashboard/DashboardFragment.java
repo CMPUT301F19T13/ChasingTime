@@ -16,6 +16,10 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.soulbook.R;
 import com.example.soulbook.datasave;
 
+/**
+* This is a class that get the dashboard of the app which includes dashboardview, messages, friends and nickname
+*/
+
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
@@ -23,6 +27,14 @@ public class DashboardFragment extends Fragment {
     private TextView friends;
     private TextView nickname;
 
+    /**
+    * This connects all of the buttons and texts from app design to code that be written to implement their functions
+    * @param inflater
+    * @param container
+    * @param savedInstanceState
+    * @return root???
+    */
+    
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
@@ -33,16 +45,31 @@ public class DashboardFragment extends Fragment {
         nickname = root.findViewById(R.id.messagepage_nickname);
         dashboardViewModel.getText().observe(this, new Observer<String>() {
             @Override
+            /**
+            * {@inheritDoc}
+            * This connects buttons of dashboard from app design to code
+            */
+          
             public void onChanged(@Nullable String s) {
                 nickname.setText(datasave.thisuser.getNickname());
                 messages.setOnClickListener(new View.OnClickListener() {
                     @Override
+                    /**
+                    * {@inheritDoc}
+                    * This connects message button of dashboard design with code
+                    */
+                    
                     public void onClick(View v) {
                         startActivity(new Intent(getContext(), message.class));
                     }
                 });
                 friends.setOnClickListener(new View.OnClickListener() {
                     @Override
+                    /**
+                    * {@inheritDoc}
+                    * This connects friend button of dashboard design with code
+                    */
+                    
                     public void onClick(View v) {
                         startActivity(new Intent(getContext(), friend.class));
                     }
