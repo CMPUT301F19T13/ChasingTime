@@ -98,17 +98,12 @@ public class moodListAdapter extends BaseAdapter {
         photos[7] = convertView.findViewById(R.id.listview_photo8);
         photos[8] = convertView.findViewById(R.id.listview_photo9);
         LinearLayout.LayoutParams mParams = new LinearLayout.LayoutParams(0,0);
-        LinearLayout.LayoutParams mParams2 = new LinearLayout.LayoutParams(150,150);
+        LinearLayout.LayoutParams mParams2 = new LinearLayout.LayoutParams(300,300);
         for (int i = 0 ;i < 9; i++){
             photos[i].setLayoutParams(mParams);
         }
         final mood thismood = moods.get(moods.size() - 1 - position);
         final String Id = moodId.get(moods.size() - 1 - position);
-        try {
-            photoFile = getMoodphotos(Id, thismood);
-        } catch (IOException e) {
-            Toast.makeText(context,"get photo fail", Toast.LENGTH_LONG).show();
-        }
         //Toast.makeText(context,String.valueOf(thismood.getPhotonumber() + ":" + photoFile.size()), Toast.LENGTH_LONG).show();
         likeButton.setVisibility(View.INVISIBLE);
         listViewLikeList.setHeight(0);
@@ -131,7 +126,7 @@ public class moodListAdapter extends BaseAdapter {
             listViewMoodText.setText(thismood.getContent());
             for (int i = 0; i <thismood.getPhotonumber(); i++){
                 photos[i].setLayoutParams(mParams2);
-                photos[i].setImageURI(Uri.parse(photoFile.get(i).toString()));
+                setImageView(Id, thismood, photos[i], i);
             }
         }
         else{
@@ -163,28 +158,27 @@ public class moodListAdapter extends BaseAdapter {
     }
 
     /**
-     * a method to get photos of a mood
+     * a method to load image into imageview by glide
      * @param moodId
      *   Id of the mood
      * @param m
      *   mood m
+     * @param iv
+     * ImageView of image
+     * @param i
+     * index of image position
      * @return
-     * @throws IOException
      */
-    private ArrayList<File> getMoodphotos(String moodId, mood m) throws IOException {
-        StorageReference a = FirebaseStorage.getInstance().getReference().child("moodphoto").child(moodId);
-        final ArrayList<File> result = new ArrayList<>();
-        final File localFile = File.createTempFile("image", ".jpg");
-        int number = m.getPhotonumber();
-        for (int i = 0 ; i < number; i++){
-            a.child(i+".jpg").getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                }
-            });
-            result.add(localFile);
-        }
-        return result;
+    private void setImageView(String moodId, mood m, final ImageView iv, int i){
+        StorageReference s = FirebaseStorage.getInstance().getReference().child("moodphoto").child(moodId).child(i + ".jpg");
+        s.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Glide.with(context)
+                        .load(uri)
+                        .into(iv);
+            }
+        });
     }
 
 }
