@@ -19,6 +19,11 @@ import android.view.ViewGroup;
 
 import com.example.soulbook.R;
 
+/**
+ * This is the class that used to build add friends interface. 
+ * It's not complete.
+ */
+
 public class addFriendFragment extends DialogFragment {
     private OnFragmentInteractionListener listener;
 
