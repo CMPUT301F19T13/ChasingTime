@@ -32,8 +32,8 @@ public class DashboardFragment extends Fragment {
     * @param inflater
     * @param container
     * @param savedInstanceState
-    * @return root???
-    */
+    * @return the views of dashboard
+    */ 
     
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,32 +44,29 @@ public class DashboardFragment extends Fragment {
         friends = root.findViewById(R.id.messagepage_friends);
         nickname = root.findViewById(R.id.messagepage_nickname);
         dashboardViewModel.getText().observe(this, new Observer<String>() {
-            @Override
+            
             /**
-            * {@inheritDoc}
             * This connects buttons of dashboard from app design to code
             */
-          
+            @Override
             public void onChanged(@Nullable String s) {
                 nickname.setText(datasave.thisuser.getNickname());
                 messages.setOnClickListener(new View.OnClickListener() {
-                    @Override
+                    
                     /**
-                    * {@inheritDoc}
                     * This connects message button of dashboard design with code
                     */
-                    
+                    @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getContext(), message.class));
                     }
                 });
                 friends.setOnClickListener(new View.OnClickListener() {
-                    @Override
+                    
                     /**
-                    * {@inheritDoc}
                     * This connects friend button of dashboard design with code
                     */
-                    
+                    @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getContext(), friend.class));
                     }
