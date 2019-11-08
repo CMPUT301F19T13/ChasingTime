@@ -8,6 +8,7 @@ import com.example.soulbook.R;
 
 /**
  * This is a class that shows the interface of message in dashboard
+ * It's not complete
  */
 
 public class message extends AppCompatActivity {
