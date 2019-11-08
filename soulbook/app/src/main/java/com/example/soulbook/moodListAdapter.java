@@ -36,7 +36,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * this is an adapter for moodlist, where
+ * This is a class that shows the mode list 
  */
 public class moodListAdapter extends BaseAdapter {
     private Context context;
@@ -136,6 +136,12 @@ public class moodListAdapter extends BaseAdapter {
         listViewTime.setText(thismood.getTime().printTime());
         return convertView;
     }
+    
+    /**
+     * this implements different emotion cases
+     * @param emotion
+         different kinds of emotions
+     */
 
     public int emotionToEmojiUnicode(String emotion){
         switch (emotion){
