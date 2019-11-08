@@ -38,6 +38,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * This is a class that get the mainpage view of the app, and how the fragment react to oncreate
+ */
 public class HomeFragment extends Fragment{
     private HomeViewModel homeViewModel;
     TextView homepageNickname, test;
@@ -48,6 +51,14 @@ public class HomeFragment extends Fragment{
     ArrayList<mood> moodlist;
     Button homepageShowButton;
     boolean showDetail = false;
+
+    /**
+     * This method shows the nicknames and historical mood of current user
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         nicknames = new ArrayList<>();
         moodlist = new ArrayList<>();
@@ -55,6 +66,11 @@ public class HomeFragment extends Fragment{
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_home, container, false);
         homeViewModel.getText().observe(this, new Observer<String>() {
+            /**
+             * This method show the four buttons on the top of the main page
+             * nickname, addmood, personal icon, and show details of each mood
+             * @param s
+             */
             @Override
             public void onChanged(@Nullable final String s) {
                 homepageNickname = root.findViewById(R.id.homepage_nickname);
@@ -64,6 +80,10 @@ public class HomeFragment extends Fragment{
                 homepageAddmood = root.findViewById(R.id.homepage_addmood);
                 final String UserId = FirebaseAuth.getInstance().getUid();
                 homepageShowButton.setOnClickListener(new View.OnClickListener() {
+                    /**
+                     * after clicked the show details buttons, let each mood shows the details
+                     * @param v
+                     */
                     @Override
                     public void onClick(View v) {
                         if (showDetail){
@@ -110,6 +130,10 @@ public class HomeFragment extends Fragment{
         return root;
     }
 
+    /**
+     * delete a moood
+     * @param postition
+     */
     public void removemood(int postition){
         moodlist.remove(postition);
         nicknames.remove(postition);
