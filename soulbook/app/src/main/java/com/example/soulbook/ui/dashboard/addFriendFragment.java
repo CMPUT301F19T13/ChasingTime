@@ -19,13 +19,17 @@ import android.view.ViewGroup;
 
 import com.example.soulbook.R;
 
+/**
+* This is the class that used to build add friends interface. It's not complete.
+*/
+
 public class addFriendFragment extends DialogFragment {
     private OnFragmentInteractionListener listener;
-
+    
     public interface OnFragmentInteractionListener {
         void onOkPressed();
     }
-
+    
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -36,7 +40,7 @@ public class addFriendFragment extends DialogFragment {
                     + " must implement OnFragmentInteractionListener");
         }
     }
-
+    
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -48,6 +52,7 @@ public class addFriendFragment extends DialogFragment {
                 .setTitle("Add City")
                 .setNegativeButton("Cancel", null)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //listener.onOkPressed();
