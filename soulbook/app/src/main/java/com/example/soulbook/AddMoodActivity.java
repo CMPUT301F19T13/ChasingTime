@@ -38,6 +38,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * AddMoodActivity is a activity that can post new mood
+ * can choose a emotion and photos and location from phone and add text that user want to say
+ */
 public class AddMoodActivity extends AppCompatActivity {
     private TextView addmoodpagenickname, addmoodlocation;
     private ImageView[] photos = new ImageView[9];
@@ -51,6 +55,9 @@ public class AddMoodActivity extends AppCompatActivity {
     private int i = 0;
 
     @Override
+    /**
+     * create a new mood that can include text,emotion,location and photos
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_mood);
@@ -73,6 +80,9 @@ public class AddMoodActivity extends AppCompatActivity {
 
         addmoodpageaddphoto.setOnClickListener(new View.OnClickListener() {
             @Override
+            /**
+             * upload the photos from phone
+             */
             public void onClick(View v) {
                 uploadphoto();
             }
@@ -82,22 +92,34 @@ public class AddMoodActivity extends AppCompatActivity {
 
         addmoodpageemtion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
+            /**
+             * select one emotion that user want
+             */
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 emotion = datasave.emotions[position];
             }
             @Override
+            /**
+             * user does not choose any emotion
+             */
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
         addmoodpagebackbutton.setOnClickListener(new View.OnClickListener() {
             @Override
+            /**
+             * back to MainActivity
+             */
             public void onClick(View v) {
                 startActivity(new Intent(AddMoodActivity.this, MainActivity.class));
             }
         });
         FirebaseDatabase.getInstance().getReference().child("users").child(datasave.UserId).addValueEventListener(new ValueEventListener() {
             @Override
+            /**
+             * change the data
+             */
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 moods = (ArrayList<String>) dataSnapshot.child("moods").getValue();
                 if (moods == null){
@@ -112,6 +134,11 @@ public class AddMoodActivity extends AppCompatActivity {
         });
         addmoodpageaddmood.setOnClickListener(new View.OnClickListener() {
             @Override
+            /**
+             * post the new mood into mood list
+             * back to the MainActivity and can see the new mood
+             * new mood cannot be empty
+             */
             public void onClick(View v) {
                 if(addmoodpagewritecontent.getText().toString() == ""){
                     Toast.makeText(AddMoodActivity.this, "post mood fail, please write something", Toast.LENGTH_SHORT).show();
@@ -134,6 +161,10 @@ public class AddMoodActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * store the photo into firebase
+     * @param moodId
+     */
     private void storephotoToFirebase(final String moodId) {
         final StorageReference sf = FirebaseStorage.getInstance().getReference().child("moodphoto");
         for (int j = 0; j < i; j++){
@@ -147,6 +178,9 @@ public class AddMoodActivity extends AppCompatActivity {
         return;
     }
 
+    /**
+     * upload photos no more than 9
+     */
     private void uploadphoto() {
         Intent in = new Intent(Intent.ACTION_PICK);
         in.setType(MediaStore.Images.Media.CONTENT_TYPE);
@@ -155,6 +189,9 @@ public class AddMoodActivity extends AppCompatActivity {
 
 
     @Override
+    /**
+     * check the number of photos no more than 9
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 10 && resultCode == RESULT_OK) {
             if (i < 9){

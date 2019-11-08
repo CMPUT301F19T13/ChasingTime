@@ -22,6 +22,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/**
+ * This activity is the login page
+ * user can login using userID and password or sign up a new userID
+ */
 public class LogInPage extends AppCompatActivity {
     private EditText useremail;
     private EditText password;
@@ -31,6 +35,11 @@ public class LogInPage extends AppCompatActivity {
     FirebaseAuth mAuth;
 
     @Override
+    /**
+     * user can login the user account when input correct email address and password
+     * user cannot login user account if email address cannot match with password
+     * show login fail if email address cannot match with password
+     */
     protected void onCreate(Bundle savedInstanceState) {
         //after click the login button
         super.onCreate(savedInstanceState);
@@ -47,6 +56,9 @@ public class LogInPage extends AppCompatActivity {
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
+            /**
+             * go to sign up activity if user touch "sign up" button
+             */
             public void onClick(View v) {
                 Intent in = new Intent(LogInPage.this, SignUpPage.class);
                 startActivity(in);
@@ -57,6 +69,10 @@ public class LogInPage extends AppCompatActivity {
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
+            /**
+             * input the email address and password for matching
+             * email address and password cannot be empty
+             */
             public void onClick(View v) {
                 final String userEmail = useremail.getText().toString();
                 final String passWord = password.getText().toString();
@@ -72,12 +88,19 @@ public class LogInPage extends AppCompatActivity {
                 else{
                     mAuth.signInWithEmailAndPassword(userEmail, passWord).addOnCompleteListener(LogInPage.this, new OnCompleteListener<AuthResult>() {
                                 @Override
+                                /**
+                                 * email address can match with correct password
+                                 * print "log in fail" if input wrong email address or input wrong password
+                                 */
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     //the input email and password is correct
                                     if (task.isSuccessful()) {
                                         String UserId = FirebaseAuth.getInstance().getUid();
                                         FirebaseDatabase.getInstance().getReference().child("users").child(UserId).addValueEventListener(new ValueEventListener() {
                                             @Override
+                                            /**
+                                             * change the data
+                                             */
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 datasave.thisuser.setNickname(dataSnapshot.child("nickname").getValue().toString());
                                                 datasave.thisuser.setEmail(dataSnapshot.child("email").getValue().toString());
@@ -85,6 +108,9 @@ public class LogInPage extends AppCompatActivity {
                                             }
 
                                             @Override
+                                            /**
+                                             * cancel to log in
+                                             */
                                             public void onCancelled(@NonNull DatabaseError databaseError) {
 
                                             }
