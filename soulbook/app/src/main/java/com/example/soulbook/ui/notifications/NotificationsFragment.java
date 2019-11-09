@@ -15,7 +15,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.soulbook.R;
 
 /**
- * This class shows the fragments in notification page if exist 
+ * This class shows the fragments in notification page if exist
  */
 public class NotificationsFragment extends Fragment {
 
