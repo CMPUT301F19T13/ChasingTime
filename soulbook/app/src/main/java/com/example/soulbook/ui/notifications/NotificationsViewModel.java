@@ -4,6 +4,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+/**
+ * This class shows content in notifications page
+ */
 public class NotificationsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;

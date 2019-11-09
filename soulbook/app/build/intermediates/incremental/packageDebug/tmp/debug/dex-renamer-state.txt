@@ -1,4 +1,7 @@
-#Fri Nov 08 15:50:36 MST 2019
+#Fri Nov 08 16:15:23 MST 2019
 base.0=D\:\\ChasingTime\\soulbook\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
+base.1=C\:\\Users\\lzeeorno\\Desktop\\301\\ChasingTime\\soulbook\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
