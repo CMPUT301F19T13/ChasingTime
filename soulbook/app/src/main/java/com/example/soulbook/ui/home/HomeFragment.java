@@ -75,7 +75,6 @@ public class HomeFragment extends Fragment{
             public void onChanged(@Nullable final String s) {
                 homepageNickname = root.findViewById(R.id.homepage_nickname);
                 homepagemoodlist = root.findViewById(R.id.homepage_moodlist);
-                test = root.findViewById(R.id.homepage_test);
                 homepageShowButton = root.findViewById(R.id.homepage_showbutton);
                 homepageAddmood = root.findViewById(R.id.homepage_addmood);
                 final String UserId = FirebaseAuth.getInstance().getUid();

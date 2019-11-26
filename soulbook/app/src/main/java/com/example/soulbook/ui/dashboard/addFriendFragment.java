@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.soulbook.R;
 
@@ -26,9 +28,11 @@ import com.example.soulbook.R;
 
 public class addFriendFragment extends DialogFragment {
     private OnFragmentInteractionListener listener;
+    TextView nickname;
+    EditText message;
 
     public interface OnFragmentInteractionListener {
-        void onOkPressed();
+        void onYesPressed(String message, String userId);
     }
 
     @Override
@@ -46,16 +50,27 @@ public class addFriendFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.add_friend_fragment, null);
+        nickname = view.findViewById(R.id.add_friend_nickname);
+        message = view.findViewById(R.id.add_friend_message);
+        Bundle b = this.getArguments();
+        nickname.setText(b.get("nickname").toString());
+        final String userId = b.get("userId").toString();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         return builder
                 .setView(view)
-                .setTitle("Add City")
+                .setTitle("Send add friend requirement")
                 .setNegativeButton("Cancel", null)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        //listener.onOkPressed();
+                        if(message.getText() != null){
+                            listener.onYesPressed(message.getText().toString(), userId);
+                        }
+                        else{
+                            listener.onYesPressed("", userId);
+                        }
+
                     }}).create();
     }
 }

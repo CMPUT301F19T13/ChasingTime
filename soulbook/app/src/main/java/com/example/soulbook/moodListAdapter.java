@@ -45,7 +45,7 @@ public class moodListAdapter extends BaseAdapter {
     ArrayList<String> nicknames, moodId;
     private LayoutInflater mLayoutInflater;
     private ImageView listViewAvatar, photos[] = new ImageView[9];
-    private TextView listViewNickName, listViewMoodText, listViewTime, listViewLocation, listViewLikeList, listViewEmoji;
+    private TextView listViewNickName, listViewMoodText, listViewTime, listViewLocation, listViewLikeList, listViewEmoji, listViewSocialSit;
     private ImageButton deleteButton, likeButton;
     private String nickname;
     private HomeFragment m;
@@ -61,6 +61,17 @@ public class moodListAdapter extends BaseAdapter {
         this.moodId = moodId;
         ifshow = show;
     }
+
+    public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames, ArrayList<String> moodId, boolean show){
+        this.m = null;
+        this.context = context;
+        mLayoutInflater = LayoutInflater.from(context);
+        this.moods = moods;
+        this.nicknames = nicknames;
+        this.moodId = moodId;
+        ifshow = show;
+    }
+
 
     @Override
     public int getCount() {
@@ -89,6 +100,7 @@ public class moodListAdapter extends BaseAdapter {
         listViewLikeList = convertView.findViewById(R.id.listview_like_list);
         deleteButton = convertView.findViewById(R.id.listview_delete_mood);
         likeButton = convertView.findViewById(R.id.listview_like_button);
+        listViewSocialSit = convertView.findViewById(R.id.listview_socialSit);
         photos[0] = convertView.findViewById(R.id.listview_photo1);
         photos[1] = convertView.findViewById(R.id.listview_photo2);
         photos[2] = convertView.findViewById(R.id.listview_photo3);
@@ -109,6 +121,13 @@ public class moodListAdapter extends BaseAdapter {
         likeButton.setVisibility(View.INVISIBLE);
         listViewLikeList.setHeight(0);
 
+        if (thismood.getSocialSit() != null && thismood.getSocialSit() != "null"){
+                listViewSocialSit.setText(thismood.getSocialSit());
+            }
+        else{
+                listViewSocialSit.setText("");
+        }
+
         listViewEmoji.setText(new String(Character.toChars(emotionToEmojiUnicode(thismood.getEmotion()))));
         if (thismood.getPoster().equals(datasave.UserId)){
             deleteButton.setVisibility(View.VISIBLE);
@@ -120,7 +139,9 @@ public class moodListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 datasave a = new datasave();
-                m.removemood(moods.size() - 1 -position);
+                if (m != null){
+                    m.removemood(moods.size() - 1 -position);
+                }
             }
         });
         if (ifshow){
@@ -147,7 +168,7 @@ public class moodListAdapter extends BaseAdapter {
     public int emotionToEmojiUnicode(String emotion){
         switch (emotion){
             case "Happiness":
-                return 0x1F603;
+                return 0x1F604;
             case "Fear":
                 return 0x1F628;
             case "Sadness":
@@ -155,7 +176,7 @@ public class moodListAdapter extends BaseAdapter {
             case "Anger":
                 return 0x1F620;
             case "Surprise":
-                return 0x1F603;
+                return 0x1F929;
             case "Disgust":
                 return 0x1F635;
             case "Excitement":

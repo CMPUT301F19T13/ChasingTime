@@ -49,9 +49,10 @@ public class AddMoodActivity extends AppCompatActivity {
     private EditText addmoodpagewritecontent;
     private ImageButton addmoodpageaddmood;
     private ImageButton addmoodpagebackbutton, addmoodpageaddphoto;
-    private Spinner addmoodpageemtion;
+    private Spinner addmoodpageemtion, addmoodpagesocialSituation;
     List<String> moods;
     private String emotion = "no feeling";
+    private String social;
     private int i = 0;
 
     @Override
@@ -67,6 +68,7 @@ public class AddMoodActivity extends AppCompatActivity {
         addmoodpagebackbutton = findViewById(R.id.addmoodpage_back);
         addmoodlocation = findViewById(R.id.addmoodpage_location);
         addmoodpageemtion = findViewById(R.id.addmoodpage_emotionspinner);
+        addmoodpagesocialSituation = findViewById(R.id.addmoodpage_socialsit);
         addmoodpageaddphoto = findViewById(R.id.addphoto);
         photos[0] = findViewById(R.id.photo1);
         photos[1] = findViewById(R.id.photo2);
@@ -102,6 +104,23 @@ public class AddMoodActivity extends AppCompatActivity {
             /**
              * user does not choose any emotion
              */
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        addmoodpagesocialSituation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0){
+                    social = null;
+                }
+                else{
+                    social = datasave.socialSit[position - 1];
+                }
+            }
+
+            @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
@@ -147,6 +166,9 @@ public class AddMoodActivity extends AppCompatActivity {
                     Calendar calendar = Calendar.getInstance();
                     time moodtime = new time(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
                     mood newMood = new mood(addmoodpagewritecontent.getText().toString(), datasave.UserId, moodtime, emotion, i);
+                    if (social != null){
+                        newMood.setSocialSit(social);
+                    }
                     final String moodId = FirebaseDatabase.getInstance().getReference().child("moods").push().getKey();
 
                     FirebaseDatabase.getInstance().getReference().child("moods").child(moodId).setValue(newMood.tomap());

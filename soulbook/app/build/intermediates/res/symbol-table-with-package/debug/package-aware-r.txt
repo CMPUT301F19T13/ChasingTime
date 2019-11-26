@@ -42,6 +42,7 @@ animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array emotions
+array socialSituation
 attr action
 attr actionBarDivider
 attr actionBarItemBackground
@@ -1205,12 +1206,16 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_friend_avatar
+id add_friend_message
+id add_friend_nickname
 id addmoodpage_addmood
 id addmoodpage_back
 id addmoodpage_content
 id addmoodpage_emotionspinner
 id addmoodpage_location
 id addmoodpage_nickname
+id addmoodpage_socialsit
 id addphoto
 id adjust_height
 id adjust_width
@@ -1268,6 +1273,11 @@ id fill_vertical
 id filled
 id fixed
 id forever
+id friendList_nickname
+id friend_mood_view_back
+id friend_mood_view_moodlist
+id friend_mood_view_nickname
+id friend_mood_view_showbutton
 id friendpage_backbutton
 id friendpage_friendlist
 id friendpage_searchfriend
@@ -1282,7 +1292,6 @@ id homepage_addmood
 id homepage_moodlist
 id homepage_nickname
 id homepage_showbutton
-id homepage_test
 id icon
 id icon_group
 id icon_only
@@ -1318,10 +1327,15 @@ id listview_photo6
 id listview_photo7
 id listview_photo8
 id listview_photo9
+id listview_socialSit
 id loginButton
 id masked
 id media_actions
 id message
+id message_back
+id message_listview
+id messagelist_message
+id messagelist_nickname
 id messagepage_friends
 id messagepage_message
 id messagepage_nickname
@@ -1518,6 +1532,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_mood
 layout activity_friend
+layout activity_friend_mood_view
 layout activity_log_in_page
 layout activity_main
 layout activity_message
@@ -1542,6 +1557,8 @@ layout fragment_dashboard
 layout fragment_home
 layout fragment_notifications
 layout fragment_search_friend
+layout friend_view_content
+layout message_view_content
 layout mood_view_content
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
@@ -1560,6 +1577,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout pass_add_friend_fragment
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

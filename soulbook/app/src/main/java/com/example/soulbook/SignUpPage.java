@@ -68,6 +68,9 @@ public class SignUpPage extends AppCompatActivity {
                 //promote user input password when create an account
                 final String stringPassword = newPassword.getText().toString();
                 final String stringConfirmPassword = confirmPassword.getText().toString();
+                final String stringEmail = newemail.getText().toString();
+                final String[] email = stringEmail.split("\\.");
+                //Toast.makeText(SignUpPage.this, String.valueOf(email.length), Toast.LENGTH_LONG).show();
                 //check and confirm the password when user first time create the account
                 if (!stringConfirmPassword.equals(stringPassword)){
                     Toast.makeText(SignUpPage.this, "passwords are different, please try again: " + stringPassword + " :"+ stringConfirmPassword, Toast.LENGTH_LONG).show();
@@ -87,6 +90,9 @@ public class SignUpPage extends AppCompatActivity {
                                 String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                                 User newUser = new User(newemail.getText().toString(), newNickname.getText().toString(), stringPassword);
                                 FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(newUser.toMap());
+                                //Toast.makeText(SignUpPage.this, String.valueOf(email.length), Toast.LENGTH_LONG).show();
+                                FirebaseDatabase.getInstance().getReference().child("emails").child(email[1]).child(email[0]).setValue(uid);
+                                //FirebaseDatabase.getInstance().getReference().child("emails").child(newemail.getText().toString()).setValue(uid);
                                 //FirebaseDatabase.getInstance().getReference().child("emailToId").child(newemail.getText().toString()).setValue(uid);
                                 Intent in = new Intent(SignUpPage.this, LogInPage.class);
                                 startActivity(in);

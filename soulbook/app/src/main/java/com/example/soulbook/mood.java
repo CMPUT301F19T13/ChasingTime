@@ -13,7 +13,7 @@ public class mood {
     private ArrayList<comment> comments;
     private ArrayList<String> likes;
     private int photonumber;
-    private String emotion;
+    private String emotion, socialSit;
 
     /**
      * a constructor with several useful parameters
@@ -36,6 +36,7 @@ public class mood {
         likes = null;
         this.emotion = emotion;
         photonumber = n;
+        this.socialSit = null;
     }
 
     /**
@@ -52,6 +53,20 @@ public class mood {
         likes = new ArrayList<>();
         emotion = String.valueOf(a.get("emotion"));
         photonumber =  Integer.parseInt(String.valueOf(a.get("photos")));
+        socialSit = String.valueOf(a.get("social"));
+        try{
+            socialSit = String.valueOf(a.get("social"));
+        }catch (Exception e){
+            socialSit = null;
+        }
+    }
+
+    public void setSocialSit(String socialSit){
+        this.socialSit = socialSit;
+    }
+
+    public String getSocialSit() {
+        return socialSit;
     }
 
     /**
@@ -153,6 +168,9 @@ public class mood {
         result.put("comments", comments);
         result.put("emotion", emotion);
         result.put("photos", photonumber);
+        if(socialSit != null){
+            result.put("social", socialSit);
+        }
         return result;
     }
 }

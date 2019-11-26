@@ -9,4 +9,12 @@
         <item>Disgust</item>
         <item>Excitement</item>
     </string-array>
+
+    <string-array name="socialSituation">
+        <item>not selected</item>
+        <item>Alone</item>
+        <item>With families</item>
+        <item>With friends</item>
+        <item>With strangers</item>
+    </string-array>
 </resources>

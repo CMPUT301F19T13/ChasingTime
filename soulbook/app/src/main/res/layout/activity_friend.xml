@@ -30,6 +30,13 @@
             android:scaleType="fitXY"
             android:background="@color/colorTransparency"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="friends"
+            android:layout_gravity="center"
+            android:textSize="40dp"/>
+
     </FrameLayout>
 
     <ImageView
