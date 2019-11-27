@@ -53,8 +53,7 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/radius"
             android:textColor="#ffff"
-            app:cornerRadius="40dp"
-            android:text="Log in" />
+            android:text="Sign in" />
 
         <Button
             android:id="@+id/signUpButton"
@@ -65,7 +64,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/radius"
+            android:background="@drawable/radius_light"
             android:textColor="#ffff"
             android:text="Sign up"
             />
