@@ -5,58 +5,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".LogInPage">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="Sign up"
-            android:id="@+id/signUpButton"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="end"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"/>
-
-    </FrameLayout>
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/logo1"
+        android:layout_marginTop="60dp"
+        android:layout_width="370dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo2"
         android:layout_marginBottom="10dp"
         android:scaleType="fitXY"
         android:layout_gravity="center_horizontal"/>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:id="@+id/userEmail"
-        android:hint="Please enter your email address"
-        android:textSize="20dp"/>
+        android:hint="Email Address"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"/>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:id="@+id/password"
-        android:hint="Please enter your password"
+        android:hint="Password"
         android:textSize="20dp"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:layout_gravity="center_horizontal"/>
 
     <FrameLayout
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="Log in"
-            android:layout_gravity="center"
-            android:id="@+id/loginButton"/>
+            android:id="@+id/loginButton"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/radius"
+            android:textColor="#ffffff"
+            android:text="Sign in" />
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/radius_light"
+            android:textColor="#ffffff"
+            android:text="Sign up"
+            />
 
     </FrameLayout>
+
 
 </LinearLayout>

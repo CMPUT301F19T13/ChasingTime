@@ -22,6 +22,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
+/**
+ * This activity is the login page
+ * user can login using userID and password or sign up a new userID
+ */
 public class LogInPage extends AppCompatActivity {
     private EditText useremail;
     private EditText password;
@@ -29,7 +35,13 @@ public class LogInPage extends AppCompatActivity {
     private Button signup;
     private DatabaseReference DataBase;
     FirebaseAuth mAuth;
+    private ArrayList<String> friends = new ArrayList<>();
 
+    /**
+     * user can login the user account when input correct email address and password
+     * user cannot login user account if email address cannot match with password
+     * show login fail if email address cannot match with password
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //after click the login button
@@ -47,16 +59,21 @@ public class LogInPage extends AppCompatActivity {
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
+            /**
+             * go to sign up activity if user touch "sign up" button
+             */
             public void onClick(View v) {
                 Intent in = new Intent(LogInPage.this, SignUpPage.class);
                 startActivity(in);
             }
         });
-
-
-
+        
         login.setOnClickListener(new View.OnClickListener() {
             @Override
+            /**
+             * input the email address and password for matching
+             * email address and password cannot be empty
+             */
             public void onClick(View v) {
                 final String userEmail = useremail.getText().toString();
                 final String passWord = password.getText().toString();
@@ -72,18 +89,41 @@ public class LogInPage extends AppCompatActivity {
                 else{
                     mAuth.signInWithEmailAndPassword(userEmail, passWord).addOnCompleteListener(LogInPage.this, new OnCompleteListener<AuthResult>() {
                                 @Override
+                                /**
+                                 * email address can match with correct password
+                                 * print "log in fail" if input wrong email address or input wrong password
+                                 */
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     //the input email and password is correct
                                     if (task.isSuccessful()) {
-                                        String UserId = FirebaseAuth.getInstance().getUid();
+                                        final String UserId = FirebaseAuth.getInstance().getUid();
                                         FirebaseDatabase.getInstance().getReference().child("users").child(UserId).addValueEventListener(new ValueEventListener() {
+
+                                            /**
+                                             * save user's info
+                                             */
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 datasave.thisuser.setNickname(dataSnapshot.child("nickname").getValue().toString());
                                                 datasave.thisuser.setEmail(dataSnapshot.child("email").getValue().toString());
                                                 datasave.UserId = FirebaseAuth.getInstance().getUid().toString();
+                                                friends = (ArrayList)dataSnapshot.child("friends").getValue();
+                                                if(friends == null){
+                                                    friends = new ArrayList<>();
+                                                }
+                                                friends.add(0,UserId);
+                                                datasave.thisuser.setFriends(friends);
+                                                ArrayList<String> moods = (ArrayList<String>) dataSnapshot.child("moods").getValue();
+                                                if (moods == null){
+                                                    moods = new ArrayList<>();
+                                                }
+                                                datasave.thisuser.setMoods(moods);
                                             }
 
+
+                                            /**
+                                             * cancel login activity
+                                             */
                                             @Override
                                             public void onCancelled(@NonNull DatabaseError databaseError) {
 

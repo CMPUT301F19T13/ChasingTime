@@ -9,12 +9,14 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="70dp"
+        android:background="#1c6db3">
+
         <ImageButton
-            android:layout_width="40dp"
+            android:layout_width="50dp"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical|right"
-            android:src="@drawable/search"
+            android:src="@drawable/search_sign"
             android:background="@color/colorTransparency"
             android:layout_marginRight="10dp"
             android:id="@+id/friendpage_searchfriend"
@@ -22,21 +24,23 @@
 
         <ImageButton
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/back"
+            android:layout_height="30dp"
+            android:src="@drawable/return_button"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:id="@+id/friendpage_backbutton"
             android:scaleType="fitXY"
             android:background="@color/colorTransparency"/>
 
-    </FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="friends"
+            android:layout_gravity="center"
+            android:textSize="35dp"
+            android:textColor="#ffffff"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/xian"
-        android:scaleType="fitXY"/>
+    </FrameLayout>
 
     <ListView
         android:layout_width="match_parent"

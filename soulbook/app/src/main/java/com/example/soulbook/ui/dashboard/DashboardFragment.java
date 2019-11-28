@@ -16,12 +16,24 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.soulbook.R;
 import com.example.soulbook.datasave;
 
+/**
+* This is a class that get the dashboard of the app which includes dashboardview, messages, friends and nickname
+*/
+
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
     private TextView messages;
     private TextView friends;
     private TextView nickname;
+    
+    /**
+     * This connects all of the buttons and texts from app design to code that be written to implement their functions
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return the views of dashboard
+     */
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -32,16 +44,28 @@ public class DashboardFragment extends Fragment {
         friends = root.findViewById(R.id.messagepage_friends);
         nickname = root.findViewById(R.id.messagepage_nickname);
         dashboardViewModel.getText().observe(this, new Observer<String>() {
+            
+            /**
+             * This connects buttons of dashboard from app design to code
+             */
             @Override
             public void onChanged(@Nullable String s) {
                 nickname.setText(datasave.thisuser.getNickname());
                 messages.setOnClickListener(new View.OnClickListener() {
+                    
+                    /**
+                     * This connects message button of dashboard design with code
+                     */
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getContext(), message.class));
                     }
                 });
                 friends.setOnClickListener(new View.OnClickListener() {
+                    
+                    /**
+                     * This connects friend button of dashboard design with code
+                     */
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getContext(), friend.class));

@@ -1,67 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end|bottom"
+        android:id="@+id/homepage_addmood"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/add"
+        android:backgroundTint="#1c6db3"
+        app:fabCustomSize="40dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end|bottom"
+        android:backgroundTint="@color/colorblue"
+        android:src="@drawable/detail"
+        app:fabCustomSize="40dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="40dp"
+        android:id="@+id/homepage_showbutton"/>
 
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/avatar"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="nickname"
-            android:textSize="30dp"
-            android:layout_gravity="center"
-            android:id="@+id/homepage_nickname"/>
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:text="detail"
-            android:textSize="5dp"
-            android:layout_marginLeft="300dp"
-            android:layout_gravity="bottom"
-            android:id="@+id/homepage_showbutton"/>
-
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="right|center"
-            android:id="@+id/homepage_addmood"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/add"
-            android:scaleType="fitXY"
-            android:background="@color/colorTransparency"/>
-    </FrameLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:src="@drawable/xian"
-        android:scaleType="fitXY"
-        android:background="@color/colorTransparency"/>
-
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/homepage_test"/>
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#1c6db3">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/homepage_moodlist" />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/touxiang"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nickname"
+                android:textSize="35dp"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"
+                android:id="@+id/homepage_nickname"/>
 
+        </FrameLayout>
 
-</LinearLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/homepage_moodlist"
+            android:layout_marginBottom="60dp"/>
+
+    </LinearLayout>
+</FrameLayout>
