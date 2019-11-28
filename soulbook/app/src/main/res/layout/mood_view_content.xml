@@ -5,43 +5,44 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="70dp">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical"
             android:id="@+id/listview_avatar"
-            android:src="@drawable/avatar"/>
+            android:src="@drawable/touxiang"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="nickname"
-            android:textSize="20dp"
-            android:layout_marginLeft="60dp"
-            android:layout_gravity="bottom"
+            android:textSize="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
             android:id="@+id/listview_nickname"
             android:textColor="@color/colorBlack"/>
 
         <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="right"
-            android:src="@drawable/delete_mood"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right|center"
+            android:src="@drawable/delete_w"
             android:id="@+id/listview_delete_mood"
             android:scaleType="fitXY"
             android:background="@color/colorTransparency"/>
     </FrameLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="emoji"
         android:id="@+id/listview_emoji"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"/>
+        android:text="emoji" />
 
     <TextView
         android:layout_marginTop="10dp"

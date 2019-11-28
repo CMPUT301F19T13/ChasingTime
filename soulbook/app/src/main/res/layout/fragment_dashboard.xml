@@ -7,31 +7,26 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="70dp"
+        android:background="#1c6db3">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/avatar"/>
+            android:src="@drawable/touxiang"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="nickname"
-            android:textSize="30dp"
+            android:textSize="35dp"
+            android:textColor="#ffffff"
             android:layout_gravity="center"
             android:id="@+id/messagepage_nickname"/>
 
     </FrameLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:src="@drawable/xian"
-        android:scaleType="fitXY"
-        android:background="@color/colorTransparency"/>
 
 
     <FrameLayout

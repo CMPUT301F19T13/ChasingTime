@@ -9,12 +9,13 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="70dp"
+        android:background="#1c6db3">
 
         <ImageButton
-            android:layout_width="40dp"
+            android:layout_width="50dp"
             android:layout_height="40dp"
-            android:src="@drawable/back"
+            android:src="@drawable/return_button"
             android:scaleType="fitXY"
             android:background="@color/colorTransparency"
             android:layout_marginLeft="10dp"
@@ -25,27 +26,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="nickname"
-            android:textSize="30dp"
+            android:textSize="35dp"
+            android:textColor="#ffffff"
             android:layout_gravity="center"
             android:id="@+id/friend_mood_view_nickname"/>
 
         <Button
             android:layout_width="60dp"
             android:layout_height="30dp"
+            android:layout_marginRight="10dp"
             android:text="detail"
-            android:textSize="5dp"
-            android:layout_marginLeft="300dp"
-            android:layout_gravity="bottom"
+            android:textSize="10dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/radius_light"
+            android:layout_gravity="right|center"
             android:id="@+id/friend_mood_view_showbutton"/>
 
     </FrameLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:src="@drawable/xian"
-        android:scaleType="fitXY"
-        android:background="@color/colorTransparency"/>
 
     <ListView
         android:layout_width="match_parent"
