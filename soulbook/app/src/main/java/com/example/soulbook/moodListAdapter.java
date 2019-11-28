@@ -71,6 +71,7 @@ public class moodListAdapter extends BaseAdapter {
         this.nicknames = nicknames;
         this.moodId = moodId;
         ifshow = show;
+
     }
 
 
@@ -122,6 +123,13 @@ public class moodListAdapter extends BaseAdapter {
         //Toast.makeText(context,String.valueOf(thismood.getPhotonumber() + ":" + photoFile.size()), Toast.LENGTH_LONG).show();
         likeButton.setVisibility(View.INVISIBLE);
         listViewLikeList.setHeight(0);
+
+        if (thismood.getLocation() !=  "null" && thismood.getLocation() != null){
+            listViewLocation.setText(thismood.getLocation());
+        }
+        else{
+            listViewLocation.setText("");
+        }
 
         if (thismood.getSocialSit() != null && thismood.getSocialSit() != "null"){
                 listViewSocialSit.setText(thismood.getSocialSit());

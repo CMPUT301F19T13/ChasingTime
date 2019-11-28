@@ -69,13 +69,16 @@ public class mood {
         likes = new ArrayList<>();
         emotion = String.valueOf(a.get("emotion"));
         photonumber =  Integer.parseInt(String.valueOf(a.get("photos")));
-        socialSit = String.valueOf(a.get("social"));
+        try{
+            location = String.valueOf(a.get("location"));
+        }catch(Exception e){
+            location = null;
+        }
         try{
             socialSit = String.valueOf(a.get("social"));
         }catch (Exception e){
             socialSit = null;
         }
-        location = String.valueOf(a.get("location"));
         try {
             longtitude = String.valueOf(a.get("longtitude"));
         }catch (Exception e){
@@ -101,6 +104,10 @@ public class mood {
 
     public String getSocialSit() {
         return socialSit;
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     /**

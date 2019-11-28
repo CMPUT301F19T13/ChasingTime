@@ -146,12 +146,6 @@
             android:id="@+id/listview_mood_time"
             android:layout_marginLeft="20dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="this is location"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/listview_location"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -179,8 +173,13 @@
     </LinearLayout>
 
     <TextView
-        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="this is locationdxsb"
         android:layout_marginLeft="20dp"
+        android:id="@+id/listview_location"/>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
