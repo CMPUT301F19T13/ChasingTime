@@ -73,8 +73,8 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int bottom = 0x7f090053;
-        public static final int end = 0x7f090074;
+        public static final int bottom = 0x7f090052;
+        public static final int end = 0x7f090073;
         public static final int gone = 0x7f09008b;
         public static final int invisible = 0x7f09009a;
         public static final int left = 0x7f09009f;

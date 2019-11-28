@@ -2,18 +2,28 @@ package com.example.soulbook;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +41,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -43,7 +54,8 @@ import java.util.List;
  * can choose a emotion and photos and location from phone and add text that user want to say
  */
 public class AddMoodActivity extends AppCompatActivity {
-    private TextView addmoodpagenickname, addmoodlocation;
+    private TextView addmoodpagenickname;
+    private Switch addmoodlocation;
     private ImageView[] photos = new ImageView[9];
     private Uri[] photourl = new Uri[9];
     private EditText addmoodpagewritecontent;
@@ -54,7 +66,9 @@ public class AddMoodActivity extends AppCompatActivity {
     private String emotion = "no feeling";
     private String social;
     private int i = 0;
-
+    private LocationManager locationManager;
+    private double longtitude, latitude;
+    private String addressName;
     @Override
     /**
      * create a new mood that can include text,emotion,location and photos
@@ -66,7 +80,7 @@ public class AddMoodActivity extends AppCompatActivity {
         addmoodpagenickname = findViewById(R.id.addmoodpage_nickname);
         addmoodpagewritecontent = findViewById(R.id.addmoodpage_content);
         addmoodpagebackbutton = findViewById(R.id.addmoodpage_back);
-        addmoodlocation = findViewById(R.id.addmoodpage_location);
+        addmoodlocation = findViewById(R.id.get_location);
         addmoodpageemtion = findViewById(R.id.addmoodpage_emotionspinner);
         addmoodpagesocialSituation = findViewById(R.id.addmoodpage_socialsit);
         addmoodpageaddphoto = findViewById(R.id.addphoto);
@@ -79,6 +93,37 @@ public class AddMoodActivity extends AppCompatActivity {
         photos[6] = findViewById(R.id.photo7);
         photos[7] = findViewById(R.id.photo8);
         photos[8] = findViewById(R.id.photo9);
+
+        final Geocoder geocoder = new Geocoder(this);
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION}, 10);
+        }
+
+        final Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+        addmoodlocation.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+
+                    List<Address> addresses = new ArrayList<Address>();
+                    longtitude = location.getLatitude();
+                    latitude = location.getLongitude();
+                    try {
+                        addresses = geocoder.getFromLocation(longtitude, latitude,1);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    final Address address = addresses.get(0);
+                    addressName = address.getFeatureName() + "." + address.getThoroughfare() + "." + address.getLocality() + "." + address.getAdminArea() + "." + address.getCountryName();
+                }
+                else{
+                    addressName = "";
+                }
+            }
+        });
 
         addmoodpageaddphoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,7 +210,7 @@ public class AddMoodActivity extends AppCompatActivity {
                 else{
                     Calendar calendar = Calendar.getInstance();
                     time moodtime = new time(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
-                    mood newMood = new mood(addmoodpagewritecontent.getText().toString(), datasave.UserId, moodtime, emotion, i);
+                    mood newMood = new mood(addmoodpagewritecontent.getText().toString(), datasave.UserId, moodtime, emotion, i, addressName, String.valueOf(longtitude), String.valueOf(latitude));
                     if (social != null){
                         newMood.setSocialSit(social);
                     }

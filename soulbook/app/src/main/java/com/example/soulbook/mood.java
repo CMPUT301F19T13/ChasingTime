@@ -14,6 +14,9 @@ public class mood {
     private ArrayList<String> likes;
     private int photonumber;
     private String emotion, socialSit;
+    private String location;
+    private String longtitude;
+    private String latitude;
 
     /**
      * a constructor with several useful parameters
@@ -28,15 +31,28 @@ public class mood {
      * @param n
      *   number of a photo
      */
-    public mood(String content, String poster, time time, String emotion, int n){
+    public mood(String content, String poster, time time, String emotion, int n, String location, String longtitude, String latitude){
         this.content = content;
         this.poster = poster;
         this.Time = time;
+        this.location = location;
         comments = null;
         likes = null;
         this.emotion = emotion;
         photonumber = n;
-        this.socialSit = null;
+        this.longtitude = longtitude;
+        this.latitude = latitude;
+    }
+
+    public mood(String content, String poster, time time, String emotion, int n, String location) {
+        this.content = content;
+        this.poster = poster;
+        this.Time = time;
+        this.location = location;
+        comments = null;
+        likes = null;
+        this.emotion = emotion;
+        photonumber = n;
     }
 
     /**
@@ -59,6 +75,24 @@ public class mood {
         }catch (Exception e){
             socialSit = null;
         }
+        location = String.valueOf(a.get("location"));
+        try {
+            longtitude = String.valueOf(a.get("longtitude"));
+        }catch (Exception e){
+            longtitude = null;
+        }
+
+        try{latitude = String.valueOf(a.get("latitude"));
+        }catch(Exception e){
+            latitude = null;
+        }
+    }
+    public String getLongtitude(){
+        return longtitude;
+    }
+
+    public String getlatitude(){
+        return latitude;
     }
 
     public void setSocialSit(String socialSit){
@@ -170,6 +204,13 @@ public class mood {
         result.put("photos", photonumber);
         if(socialSit != null){
             result.put("social", socialSit);
+        }
+        result.put("location", location);
+        if(longtitude != null){
+            result.put("longtitude",longtitude);
+        }
+        if(latitude != null) {
+            result.put("latitude", latitude);
         }
         return result;
     }

@@ -1225,7 +1225,6 @@ id addmoodpage_addmood
 id addmoodpage_back
 id addmoodpage_content
 id addmoodpage_emotionspinner
-id addmoodpage_location
 id addmoodpage_nickname
 id addmoodpage_socialsit
 id addphoto
@@ -1293,6 +1292,7 @@ id friend_mood_view_showbutton
 id friendpage_backbutton
 id friendpage_friendlist
 id friendpage_searchfriend
+id get_location
 id ghost_view
 id glide_custom_view_target_tag
 id gone
