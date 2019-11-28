@@ -64,9 +64,7 @@ public class LogInPage extends AppCompatActivity {
                 startActivity(in);
             }
         });
-
-
-
+        
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             /**

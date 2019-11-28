@@ -3,6 +3,7 @@ package com.example.soulbook;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,7 +46,7 @@ public class moodListAdapter extends BaseAdapter {
     ArrayList<String> nicknames, moodId;
     private LayoutInflater mLayoutInflater;
     private ImageView listViewAvatar, photos[] = new ImageView[9];
-    private TextView listViewNickName, listViewMoodText, listViewTime, listViewLocation, listViewLikeList, listViewEmoji, listViewSocialSit;
+    private TextView listViewNickName, listViewMoodText, listViewTime, listViewLocation, listViewLikeList, listViewEmoji, listViewSocialSit, listViewEmojiText;
     private ImageButton deleteButton, likeButton;
     private String nickname;
     private HomeFragment m;
@@ -101,6 +102,7 @@ public class moodListAdapter extends BaseAdapter {
         deleteButton = convertView.findViewById(R.id.listview_delete_mood);
         likeButton = convertView.findViewById(R.id.listview_like_button);
         listViewSocialSit = convertView.findViewById(R.id.listview_socialSit);
+        listViewEmojiText = convertView.findViewById(R.id.listview_emojiText);
         photos[0] = convertView.findViewById(R.id.listview_photo1);
         photos[1] = convertView.findViewById(R.id.listview_photo2);
         photos[2] = convertView.findViewById(R.id.listview_photo3);
@@ -126,6 +128,12 @@ public class moodListAdapter extends BaseAdapter {
             }
         else{
                 listViewSocialSit.setText("");
+        }
+
+        listViewEmojiText.setText(thismood.getEmotion());
+        listViewEmojiText.setBackgroundColor(Color.parseColor(getEmotionColor(thismood.getEmotion())));
+        if (thismood.getEmotion() == "Sadness" || thismood.getEmotion() == "Fear" || thismood.getEmotion() == "Disgust"){
+            listViewEmojiText.setTextColor(Color.parseColor("#ffffff"));
         }
 
         listViewEmoji.setText(new String(Character.toChars(emotionToEmojiUnicode(thismood.getEmotion()))));
@@ -164,6 +172,26 @@ public class moodListAdapter extends BaseAdapter {
      * @param emotion
          different kinds of emotions
      */
+
+    public String getEmotionColor(String emotion){
+        switch (emotion){
+            case "Happiness":
+                return "#f0f037";
+            case "Fear":
+                return "#c1de83";
+            case "Sadness":
+                return "#c9c8c7";
+            case "Anger":
+                return "#c42b38";
+            case "Surprise":
+                return "#c4baf7";
+            case "Disgust":
+                return "#e8cced";
+            case "Excitement":
+                return "#9fe4ed";
+        }
+        return "#f0f037";
+    }
 
     public int emotionToEmojiUnicode(String emotion){
         switch (emotion){

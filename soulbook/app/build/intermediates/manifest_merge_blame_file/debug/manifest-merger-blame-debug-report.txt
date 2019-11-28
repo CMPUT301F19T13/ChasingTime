@@ -6,33 +6,33 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
-8-->E:\soulbook\app\src\main\AndroidManifest.xml
+8-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->E:\soulbook\app\src\main\AndroidManifest.xml
+9-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-11-->E:\soulbook\app\src\main\AndroidManifest.xml:5:5-81
-11-->E:\soulbook\app\src\main\AndroidManifest.xml:5:22-78
+11-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:5:5-81
+11-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:5:22-78
 12    <uses-permission android:name="android.permission.CAMERA" />
-12-->E:\soulbook\app\src\main\AndroidManifest.xml:6:5-65
-12-->E:\soulbook\app\src\main\AndroidManifest.xml:6:22-62
+12-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:6:5-65
+12-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:6:22-62
 13
 14    <uses-feature android:name="android.hardware.camera" />
-14-->E:\soulbook\app\src\main\AndroidManifest.xml:8:5-60
-14-->E:\soulbook\app\src\main\AndroidManifest.xml:8:19-57
+14-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:8:5-60
+14-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:8:19-57
 15    <uses-feature android:name="android.hardware.camera.autofocus" />
-15-->E:\soulbook\app\src\main\AndroidManifest.xml:9:5-70
-15-->E:\soulbook\app\src\main\AndroidManifest.xml:9:19-67
+15-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:9:5-70
+15-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:9:19-67
 16
 17    <uses-permission android:name="android.permission.FLASHLIGHT" />
-17-->E:\soulbook\app\src\main\AndroidManifest.xml:11:5-69
-17-->E:\soulbook\app\src\main\AndroidManifest.xml:11:22-66
+17-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:11:5-69
+17-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:11:22-66
 18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-18-->E:\soulbook\app\src\main\AndroidManifest.xml:12:5-80
-18-->E:\soulbook\app\src\main\AndroidManifest.xml:12:22-77
+18-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:12:5-80
+18-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:12:22-77
 19    <uses-permission android:name="android.permission.INTERNET" />
-19-->E:\soulbook\app\src\main\AndroidManifest.xml:13:5-67
-19-->E:\soulbook\app\src\main\AndroidManifest.xml:13:22-64
+19-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:13:5-67
+19-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:13:22-64
 20
 21    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 22    <!-- <uses-sdk android:minSdkVersion="14"/> -->
@@ -50,53 +50,53 @@
 26-->[com.google.android.gms:play-services-measurement:17.2.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\7c4237e0029812955685234cfce19139\play-services-measurement-17.2.0\AndroidManifest.xml:26:22-107
 27
 28    <application
-28-->E:\soulbook\app\src\main\AndroidManifest.xml:15:5-35:19
+28-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:15:5-35:19
 29        android:allowBackup="true"
-29-->E:\soulbook\app\src\main\AndroidManifest.xml:16:9-35
+29-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:16:9-35
 30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 30-->[androidx.core:core:1.1.0] C:\Users\tszw-pc\.gradle\caches\transforms-2\files-2.1\56b6cdfbd80af409835a31a4470c49f0\core-1.1.0\AndroidManifest.xml:24:18-86
 31        android:debuggable="true"
 32        android:icon="@mipmap/ic_launcher"
-32-->E:\soulbook\app\src\main\AndroidManifest.xml:17:9-43
+32-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:17:9-43
 33        android:label="@string/app_name"
-33-->E:\soulbook\app\src\main\AndroidManifest.xml:18:9-41
+33-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:18:9-41
 34        android:roundIcon="@mipmap/ic_launcher_round"
-34-->E:\soulbook\app\src\main\AndroidManifest.xml:19:9-54
+34-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:19:9-54
 35        android:supportsRtl="true"
-35-->E:\soulbook\app\src\main\AndroidManifest.xml:20:9-35
+35-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:20:9-35
 36        android:testOnly="true"
 37        android:theme="@style/AppTheme" >
-37-->E:\soulbook\app\src\main\AndroidManifest.xml:21:9-40
+37-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:21:9-40
 38        <activity android:name="com.example.soulbook.friend_mood_view" />
-38-->E:\soulbook\app\src\main\AndroidManifest.xml:22:9-63
-38-->E:\soulbook\app\src\main\AndroidManifest.xml:22:19-51
+38-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:22:9-63
+38-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:22:19-51
 39        <activity android:name="com.example.soulbook.ui.dashboard.friend" />
-39-->E:\soulbook\app\src\main\AndroidManifest.xml:23:9-57
-39-->E:\soulbook\app\src\main\AndroidManifest.xml:23:19-54
+39-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:23:9-57
+39-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:23:19-54
 40        <activity android:name="com.example.soulbook.ui.dashboard.message" />
-40-->E:\soulbook\app\src\main\AndroidManifest.xml:24:9-58
-40-->E:\soulbook\app\src\main\AndroidManifest.xml:24:19-55
+40-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:24:9-58
+40-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:24:19-55
 41        <activity android:name="com.example.soulbook.AddMoodActivity" />
-41-->E:\soulbook\app\src\main\AndroidManifest.xml:25:9-53
-41-->E:\soulbook\app\src\main\AndroidManifest.xml:25:19-50
+41-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:25:9-53
+41-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:25:19-50
 42        <activity android:name="com.example.soulbook.MainActivity" />
-42-->E:\soulbook\app\src\main\AndroidManifest.xml:26:9-50
-42-->E:\soulbook\app\src\main\AndroidManifest.xml:26:19-47
+42-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:26:9-50
+42-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:26:19-47
 43        <activity android:name="com.example.soulbook.SignUpPage" />
-43-->E:\soulbook\app\src\main\AndroidManifest.xml:27:9-48
-43-->E:\soulbook\app\src\main\AndroidManifest.xml:27:19-45
+43-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:27:9-48
+43-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:27:19-45
 44        <activity android:name="com.example.soulbook.LogInPage" >
-44-->E:\soulbook\app\src\main\AndroidManifest.xml:28:9-34:20
-44-->E:\soulbook\app\src\main\AndroidManifest.xml:28:19-44
+44-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:28:9-34:20
+44-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:28:19-44
 45            <intent-filter>
-45-->E:\soulbook\app\src\main\AndroidManifest.xml:29:13-33:29
+45-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:29:13-33:29
 46                <action android:name="android.intent.action.MAIN" />
-46-->E:\soulbook\app\src\main\AndroidManifest.xml:30:17-69
-46-->E:\soulbook\app\src\main\AndroidManifest.xml:30:25-66
+46-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:30:17-69
+46-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:30:25-66
 47
 48                <category android:name="android.intent.category.LAUNCHER" />
-48-->E:\soulbook\app\src\main\AndroidManifest.xml:32:17-77
-48-->E:\soulbook\app\src\main\AndroidManifest.xml:32:27-74
+48-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:32:17-77
+48-->D:\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:32:27-74
 49            </intent-filter>
 50        </activity>
 51        <activity

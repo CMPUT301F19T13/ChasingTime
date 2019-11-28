@@ -960,6 +960,7 @@ dimen mtrl_textinput_box_stroke_width_default
 dimen mtrl_textinput_box_stroke_width_focused
 dimen mtrl_textinput_outline_box_expanded_padding
 dimen mtrl_toolbar_default_height
+dimen no_bar
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -1074,6 +1075,8 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable add
+drawable add_photo
+drawable adding
 drawable addphoto
 drawable avatar
 drawable avd_hide_password
@@ -1107,6 +1110,7 @@ drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable delete_mood
+drawable delete_w
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1124,7 +1128,10 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notifications_black_24dp
 drawable like_button
+drawable logo
 drawable logo1
+drawable logo2
+drawable logoo
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1140,9 +1147,14 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable radius
+drawable radius_light
+drawable return_button
 drawable search
+drawable search_sign
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable touxiang
 drawable xian
 id ALT
 id CTRL
@@ -1312,6 +1324,7 @@ id list_item
 id listview_avatar
 id listview_delete_mood
 id listview_emoji
+id listview_emojiText
 id listview_like_button
 id listview_like_list
 id listview_location

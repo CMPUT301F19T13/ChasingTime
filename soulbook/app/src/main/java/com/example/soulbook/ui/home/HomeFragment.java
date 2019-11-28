@@ -25,6 +25,7 @@ import com.example.soulbook.User;
 import com.example.soulbook.datasave;
 import com.example.soulbook.mood;
 import com.example.soulbook.moodListAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -45,12 +46,12 @@ public class HomeFragment extends Fragment{
     private HomeViewModel homeViewModel;
     TextView homepageNickname, test;
     ListView homepagemoodlist;
-    ImageButton homepageAddmood;
     ArrayList<String> moods;
     ArrayList<String> nicknames;
     ArrayList<mood> moodlist;
     Button homepageShowButton;
     boolean showDetail = false;
+    FloatingActionButton homepageAddmood;
 
     /**
      * This method shows the nicknames and historical mood of current user
