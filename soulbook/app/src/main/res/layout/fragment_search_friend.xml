@@ -7,8 +7,10 @@
     android:orientation="vertical">
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
         android:id="@+id/searchpage_content"
         android:hint="enter email address"/>
 

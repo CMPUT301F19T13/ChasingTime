@@ -8,49 +8,47 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="70dp"
+        android:background="#1c6db3">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/avatar"/>
+            android:src="@drawable/touxiang"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
             android:text="nickname"
-            android:textSize="30dp"
+            android:textSize="35dp"
             android:layout_gravity="center"
+            android:textColor="#ffffff"
             android:id="@+id/homepage_nickname"/>
 
         <Button
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="30dp"
             android:text="detail"
-            android:textSize="5dp"
-            android:layout_marginLeft="300dp"
-            android:layout_gravity="bottom"
+            android:textSize="10dp"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="90dp"
+            android:layout_gravity="center"
+            android:background="@drawable/radius_light"
             android:id="@+id/homepage_showbutton"/>
 
         <ImageButton
-            android:layout_width="40dp"
+            android:layout_width="50dp"
             android:layout_height="40dp"
             android:layout_gravity="right|center"
             android:id="@+id/homepage_addmood"
             android:layout_marginRight="10dp"
-            android:src="@drawable/add"
+            android:src="@drawable/adding"
             android:scaleType="fitXY"
             android:background="@color/colorTransparency"/>
     </FrameLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:src="@drawable/xian"
-        android:scaleType="fitXY"
-        android:background="@color/colorTransparency"/>
 
     <ListView
         android:layout_width="match_parent"
