@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".friend_mood_view"></activity>
+        <activity android:name=".ui.notifications.settingPage"></activity>
+        <activity android:name=".friend_mood_view" />
         <activity android:name=".ui.dashboard.friend" />
         <activity android:name=".ui.dashboard.message" />
         <activity android:name=".AddMoodActivity" />

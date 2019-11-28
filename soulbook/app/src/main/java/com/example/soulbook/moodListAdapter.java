@@ -50,6 +50,7 @@ public class moodListAdapter extends BaseAdapter {
     private ImageButton deleteButton, likeButton;
     private String nickname;
     private HomeFragment m;
+    private friend_mood_view n;
     private boolean ifshow;
     ArrayList<File> photoFile;
 
@@ -63,8 +64,9 @@ public class moodListAdapter extends BaseAdapter {
         ifshow = show;
     }
 
-    public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames, ArrayList<String> moodId, boolean show){
+    public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames, ArrayList<String> moodId, friend_mood_view n, boolean show){
         this.m = null;
+        this.n = n;
         this.context = context;
         mLayoutInflater = LayoutInflater.from(context);
         this.moods = moods;
@@ -157,6 +159,9 @@ public class moodListAdapter extends BaseAdapter {
                 datasave a = new datasave();
                 if (m != null){
                     m.removemood(moods.size() - 1 -position);
+                }
+                else{
+                    n.removemood(moods.size() - 1 -position);
                 }
             }
         });

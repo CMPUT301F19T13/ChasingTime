@@ -221,6 +221,16 @@ public class mood {
         }
         return result;
     }
+
+    public int compareByTime(mood b){
+        time t = b.getTime();
+        return Time.compareTime(t);
+    }
+
+    public int compareTo(mood b){
+        time t = b.getTime();
+        return Time.compareTime(t);
+    }
 }
 
 /**
@@ -348,5 +358,46 @@ class time{
      */
     public int getMonth() {
         return month;
+    }
+
+    public int compareTime(time t){
+        if (t.getYear() > year){
+            return 0;
+        }
+        else if (t.getYear() < year){
+            return 1;
+        }
+        else{
+            if (t.getMonth() > month){
+                return 0;
+            }
+            else if(t.getMonth() < month){
+                return 1;
+            }
+            else{
+                if (t.getDay() > day){
+                    return 0;
+                }
+                else if(t.getDay() < day){
+                    return 1;
+                }
+                else{
+                    if (t.getHour() > hour){
+                        return 0;
+                    }
+                    else if(t.getHour() < hour){
+                        return 1;
+                    }
+                    else{
+                        if (t.getMin() > min){
+                            return 0;
+                        }
+                        else{
+                            return 1;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

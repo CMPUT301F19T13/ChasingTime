@@ -36,8 +36,15 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.ToDoubleFunction;
+import java.util.function.ToIntFunction;
+import java.util.function.ToLongFunction;
 
 /**
  * This is a class that get the mainpage view of the app, and how the fragment react to oncreate
@@ -49,7 +56,7 @@ public class HomeFragment extends Fragment{
     ArrayList<String> moods;
     ArrayList<String> nicknames;
     ArrayList<mood> moodlist;
-    Button homepageShowButton;
+    FloatingActionButton homepageShowButton;
     boolean showDetail = false;
     FloatingActionButton homepageAddmood;
 
@@ -96,15 +103,26 @@ public class HomeFragment extends Fragment{
                         }
                     }
                 });
+                Toast.makeText(getContext(), String.valueOf(datasave.thisuser.getMoods().size()), Toast.LENGTH_LONG).show();
                 FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         moods = new ArrayList<>();
                         homepageNickname.setText(dataSnapshot.child("users").child(UserId).child("nickname").getValue().toString());
-                        moods = (ArrayList<String>) dataSnapshot.child("users").child(UserId).child("moods").getValue();
-                        if (moods == null){
-                            moods = new ArrayList<>();
+                        ArrayList<String> theMoods = new ArrayList<>();
+                        for (int i = 0; i < datasave.thisuser.getFriends().size(); i++){
+                            theMoods = new ArrayList<>();
+                            theMoods = (ArrayList<String>) dataSnapshot.child("users").child(datasave.thisuser.getFriends().get(i)).child("moods").getValue();
+                            if (theMoods == null){
+                                theMoods = new ArrayList<>();
+                            }
+                            moods.addAll(theMoods);
                         }
+                        //moods = (ArrayList<String>) dataSnapshot.child("users").child(UserId).child("moods").getValue();
+                        //if (moods == null){
+                        //    moods = new ArrayList<>();
+                        //}
+                        Collections.sort(moods);
                         String posterId;
                         for (int i = 0; i < moods.size(); i++){
                             moodlist.add(new mood((HashMap)dataSnapshot.child("moods").child(moods.get(i)).getValue()));
@@ -138,9 +156,11 @@ public class HomeFragment extends Fragment{
         moodlist.remove(postition);
         nicknames.remove(postition);
         FirebaseDatabase.getInstance().getReference().child("moods").child(moods.get(postition)).setValue(null);
+        ArrayList<String> userMood = datasave.thisuser.getMoods();
+        userMood.remove(moods.get(postition));
         moods.remove(postition);
-        FirebaseDatabase.getInstance().getReference().child("users").child(datasave.UserId).child("moods").setValue(moods);
+        datasave.thisuser.setMoods(userMood);
+        FirebaseDatabase.getInstance().getReference().child("users").child(datasave.UserId).child("moods").setValue(userMood);
         homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
     }
-
 }

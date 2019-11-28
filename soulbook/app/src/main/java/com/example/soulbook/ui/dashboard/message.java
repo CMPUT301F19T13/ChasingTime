@@ -3,6 +3,7 @@ package com.example.soulbook.ui.dashboard;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.example.soulbook.MainActivity;
 import com.example.soulbook.R;
 import com.example.soulbook.datasave;
 import com.google.firebase.database.DataSnapshot;
@@ -75,6 +77,14 @@ public class message extends AppCompatActivity implements passAddFriendFragment.
                 b.putInt("pos", position);
                 a.setArguments(b);
                 a.show(getSupportFragmentManager(), "");
+            }
+        });
+        message_back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(message.this, MainActivity.class);
+                in.putExtra("data", 1);
+                startActivity(in);
             }
         });
     }

@@ -62,7 +62,7 @@ public class AddMoodActivity extends AppCompatActivity {
     private ImageButton addmoodpageaddmood;
     private ImageButton addmoodpagebackbutton, addmoodpageaddphoto;
     private Spinner addmoodpageemtion, addmoodpagesocialSituation;
-    List<String> moods;
+    ArrayList<String> moods;
     private String emotion = "no feeling";
     private String social;
     private int i = 0;
@@ -221,6 +221,7 @@ public class AddMoodActivity extends AppCompatActivity {
                     storephotoToFirebase(moodId);
                     moods.add(moodId);
                     FirebaseDatabase.getInstance().getReference().child("users").child(datasave.UserId).child("moods").setValue(moods);
+                    datasave.thisuser.setMoods(moods);
                 }
                 startActivity(new Intent(AddMoodActivity.this, MainActivity.class));
             }

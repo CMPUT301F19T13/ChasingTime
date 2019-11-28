@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.soulbook.ui.dashboard.friend;
 import com.example.soulbook.ui.home.HomeFragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,7 +24,7 @@ import java.util.HashMap;
 
 public class friend_mood_view extends AppCompatActivity {
     TextView nickname;
-    Button showButton;
+    FloatingActionButton showButton;
     ListView moodList;
     Boolean showDetail = false;
     ArrayList<String> moods;
@@ -50,11 +51,11 @@ public class friend_mood_view extends AppCompatActivity {
             public void onClick(View v) {
                 if (showDetail){
                     showDetail = false;
-                    moodList.setAdapter(new moodListAdapter(friend_mood_view.this, moodlist, nicknames, moods, showDetail));
+                    moodList.setAdapter(new moodListAdapter(friend_mood_view.this, moodlist, nicknames, moods,  friend_mood_view.this,showDetail));
                 }
                 else{
                     showDetail = true;
-                    moodList.setAdapter(new moodListAdapter(friend_mood_view.this, moodlist, nicknames, moods, showDetail));
+                    moodList.setAdapter(new moodListAdapter(friend_mood_view.this, moodlist, nicknames, moods,  friend_mood_view.this, showDetail));
                 }
             }
         });
@@ -76,7 +77,7 @@ public class friend_mood_view extends AppCompatActivity {
                     posterId = dataSnapshot.child("moods").child(moods.get(i)).child("poster").getValue().toString();
                     nicknames.add(dataSnapshot.child("users").child(posterId).child("nickname").getValue().toString());
                 }
-                moodList.setAdapter(new moodListAdapter(friend_mood_view.this, moodlist, nicknames, moods, showDetail));
+                moodList.setAdapter(new moodListAdapter(friend_mood_view.this, moodlist, nicknames, moods, friend_mood_view.this, showDetail));
             }
 
             @Override
@@ -92,5 +93,19 @@ public class friend_mood_view extends AppCompatActivity {
                 startActivity(in);
             }
         });
+
+
+    }
+    /**
+     * delete a moood
+     * @param postition
+     */
+    public void removemood(int postition){
+        moodlist.remove(postition);
+        nicknames.remove(postition);
+        FirebaseDatabase.getInstance().getReference().child("moods").child(moods.get(postition)).setValue(null);
+        moods.remove(postition);
+        FirebaseDatabase.getInstance().getReference().child("users").child(datasave.UserId).child("moods").setValue(moods);
+        moodList.setAdapter(new moodListAdapter(friend_mood_view.this, moodlist, nicknames, moods, friend_mood_view.this,showDetail));
     }
 }

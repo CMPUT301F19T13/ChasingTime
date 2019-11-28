@@ -5,13 +5,26 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/add"
-        android:scaleType="fitXY"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_gravity="end|bottom"
         android:id="@+id/homepage_addmood"
-        android:layout_marginBottom="60dp"/>
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/add"
+        android:backgroundTint="#1c6db3"
+        app:fabCustomSize="40dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end|bottom"
+        android:backgroundTint="@color/colorblue"
+        android:src="@drawable/detail"
+        app:fabCustomSize="40dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="40dp"
+        android:id="@+id/homepage_showbutton"/>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -38,22 +51,13 @@
                 android:textColor="#ffffff"
                 android:id="@+id/homepage_nickname"/>
 
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:text="detail"
-                android:textSize="10dp"
-                android:textColor="#ffffff"
-                android:layout_marginRight="10dp"
-                android:layout_gravity="end|center_vertical"
-                android:background="@drawable/radius_light"
-                android:id="@+id/homepage_showbutton"/>
         </FrameLayout>
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/homepage_moodlist" />
+            android:id="@+id/homepage_moodlist"
+            android:layout_marginBottom="60dp"/>
 
     </LinearLayout>
 </FrameLayout>

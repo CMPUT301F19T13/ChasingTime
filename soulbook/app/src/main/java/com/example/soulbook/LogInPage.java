@@ -22,6 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 /**
  * This activity is the login page
  * user can login using userID and password or sign up a new userID
@@ -33,6 +35,7 @@ public class LogInPage extends AppCompatActivity {
     private Button signup;
     private DatabaseReference DataBase;
     FirebaseAuth mAuth;
+    private ArrayList<String> friends = new ArrayList<>();
 
     /**
      * user can login the user account when input correct email address and password
@@ -93,7 +96,7 @@ public class LogInPage extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     //the input email and password is correct
                                     if (task.isSuccessful()) {
-                                        String UserId = FirebaseAuth.getInstance().getUid();
+                                        final String UserId = FirebaseAuth.getInstance().getUid();
                                         FirebaseDatabase.getInstance().getReference().child("users").child(UserId).addValueEventListener(new ValueEventListener() {
 
                                             /**
@@ -104,6 +107,17 @@ public class LogInPage extends AppCompatActivity {
                                                 datasave.thisuser.setNickname(dataSnapshot.child("nickname").getValue().toString());
                                                 datasave.thisuser.setEmail(dataSnapshot.child("email").getValue().toString());
                                                 datasave.UserId = FirebaseAuth.getInstance().getUid().toString();
+                                                friends = (ArrayList)dataSnapshot.child("friends").getValue();
+                                                if(friends == null){
+                                                    friends = new ArrayList<>();
+                                                }
+                                                friends.add(0,UserId);
+                                                datasave.thisuser.setFriends(friends);
+                                                ArrayList<String> moods = (ArrayList<String>) dataSnapshot.child("moods").getValue();
+                                                if (moods == null){
+                                                    moods = new ArrayList<>();
+                                                }
+                                                datasave.thisuser.setMoods(moods);
                                             }
 
 

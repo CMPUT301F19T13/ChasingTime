@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.soulbook.MainActivity;
 import com.example.soulbook.R;
 import com.example.soulbook.datasave;
 //import com.google.firebase.auth.FirebaseAuth;
@@ -36,7 +37,7 @@ public class friend extends AppCompatActivity implements searchFriend.OnFragment
     //class to handle all friend operations
     private ImageButton searchfriend, backbutton;
     private ListView friendlist;
-    private ArrayList<String> friends, Ids;
+    private ArrayList<String> friends = new ArrayList<>(), Ids = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,16 +51,19 @@ public class friend extends AppCompatActivity implements searchFriend.OnFragment
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 friends = new ArrayList<>();
-                Ids = (ArrayList)dataSnapshot.child(datasave.UserId).child("friends").getValue();
-                if (Ids == null){
-                    Ids = new ArrayList<>();
-                }
-                else{
+                //friends.add(datasave.thisuser.getNickname());
+                Ids = datasave.thisuser.getFriends();
+                //Ids = (ArrayList)dataSnapshot.child(datasave.UserId).child("friends").getValue();
+                //if (Ids == null){
+                //    Ids = new ArrayList<>();
+                //}
+                //else{
                     for (int i = 0; i < Ids.size(); i++){
                         friends.add(dataSnapshot.child(Ids.get(i)).child("nickname").getValue().toString());
                     }
-                    friendlist.setAdapter(new friendListAdapter(friend.this,friends));
-                }
+                //}
+                friendlist.setAdapter(new friendListAdapter(friend.this,friends));
+                //Ids.add(0,datasave.UserId);
             }
 
             @Override
@@ -80,6 +84,15 @@ public class friend extends AppCompatActivity implements searchFriend.OnFragment
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent in = new Intent(friend.this, friend_mood_view.class);
                 in.putExtra("userId", Ids.get(position));
+                startActivity(in);
+            }
+        });
+
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(friend.this, MainActivity.class);
+                in.putExtra("data", 1);
                 startActivity(in);
             }
         });

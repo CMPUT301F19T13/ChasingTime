@@ -1,52 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".friend_mood_view"
-    android:orientation="vertical">
+    tools:context=".friend_mood_view">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#1c6db3">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end|bottom"
+        android:backgroundTint="@color/colorblue"
+        android:src="@drawable/detail"
+        app:fabCustomSize="40dp"
+        android:id="@+id/friend_mood_view_showbutton"/>
 
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:src="@drawable/return_button"
-            android:scaleType="fitXY"
-            android:background="@color/colorTransparency"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center_vertical"
-            android:id="@+id/friend_mood_view_back"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="nickname"
-            android:textSize="35dp"
-            android:textColor="#ffffff"
-            android:layout_gravity="center"
-            android:id="@+id/friend_mood_view_nickname"/>
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:layout_marginRight="10dp"
-            android:text="detail"
-            android:textSize="10dp"
-            android:textColor="#ffffff"
-            android:background="@drawable/radius_light"
-            android:layout_gravity="right|center"
-            android:id="@+id/friend_mood_view_showbutton"/>
-
-    </FrameLayout>
-
-    <ListView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/friend_mood_view_moodlist" />
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#1c6db3">
 
-</LinearLayout>
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:src="@drawable/return_button"
+                android:scaleType="fitXY"
+                android:background="@color/colorTransparency"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/friend_mood_view_back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nickname"
+                android:textSize="35dp"
+                android:textColor="#ffffff"
+                android:layout_gravity="center"
+                android:id="@+id/friend_mood_view_nickname"/>
+
+        </FrameLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/friend_mood_view_moodlist" />
+
+
+    </LinearLayout>
+
+</FrameLayout>
