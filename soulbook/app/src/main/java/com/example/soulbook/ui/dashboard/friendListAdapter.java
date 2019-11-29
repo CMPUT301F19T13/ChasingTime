@@ -20,6 +20,9 @@ public class friendListAdapter extends BaseAdapter {
         mLayoutInflater = LayoutInflater.from(context);
         nicknames = nickname;
     }
+    public friendListAdapter(ArrayList<String> nickname){
+        nicknames = nickname;
+    }
 
     @Override
     public int getCount() {

@@ -26,6 +26,11 @@ public class messageListAdapter extends BaseAdapter{
         this.messages = messages;
     }
 
+    public messageListAdapter(ArrayList<String> nicknames, ArrayList<String> messages){
+        this.nicknames = nicknames;
+        this.messages = messages;
+    }
+
     @Override
     public int getCount() {
         return nicknames.size();
