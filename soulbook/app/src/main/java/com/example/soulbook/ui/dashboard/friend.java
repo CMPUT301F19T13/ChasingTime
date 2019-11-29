@@ -109,11 +109,12 @@ public class friend extends AppCompatActivity implements searchFriend.OnFragment
         FirebaseDatabase.getInstance().getReference().child("emails").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                userId[0] = dataSnapshot.child(Email[1]).child(Email[0]).getValue().toString();
-                if (userId[0] == null || userId[0] == "null"){
+                //userId[0] = dataSnapshot.child(Email[1]).child(Email[0]).getValue().toString();
+                if (dataSnapshot.child(Email[1]).child(Email[0]).getValue() == null){
                     Toast.makeText(friend.this,"Cannot find this user, please check the email address", Toast.LENGTH_LONG).show();
                 }
                 else{
+                    userId[0] = dataSnapshot.child(Email[1]).child(Email[0]).getValue().toString();
                     FirebaseDatabase.getInstance().getReference().child("users").child(userId[0]).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
