@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import com.example.soulbook.R;
+import com.example.soulbook.SignUpPage;
 import com.example.soulbook.datasave;
 import com.example.soulbook.ui.dashboard.searchFriend;
 import com.google.firebase.database.FirebaseDatabase;
@@ -35,9 +36,10 @@ public class setNicknameFragment extends DialogFragment {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if (setNewNickname.getText().toString() != "" && setNewNickname.getText().toString() != null){
+                        if (setNewNickname.getText().length() >= 1 && setNewNickname.getText().toString() != null){
                             FirebaseDatabase.getInstance().getReference().child("users").child(datasave.UserId).child("nickname").setValue(setNewNickname.getText().toString());
                             datasave.thisuser.setNickname(setNewNickname.getText().toString());
+                            Toast.makeText(getContext(), "change saved", Toast.LENGTH_LONG).show();
                         }
                        else{
                             Toast.makeText(getContext(), "invalid nickname", Toast.LENGTH_LONG).show();
