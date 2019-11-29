@@ -6,36 +6,36 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
-8-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
+8-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
+9-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-11-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:5:5-81
-11-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:5:22-78
+11-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:5:5-81
+11-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:5:22-78
 12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-12-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:6:5-81
-12-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:6:22-78
+12-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:6:5-81
+12-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:6:22-78
 13    <uses-permission android:name="android.permission.CAMERA" />
-13-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:7:5-65
-13-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:7:22-62
+13-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:7:5-65
+13-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:7:22-62
 14
 15    <uses-feature android:name="android.hardware.camera" />
-15-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:9:5-60
-15-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:9:19-57
+15-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:9:5-60
+15-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:9:19-57
 16    <uses-feature android:name="android.hardware.camera.autofocus" />
-16-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:10:5-70
-16-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:10:19-67
+16-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:10:5-70
+16-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:10:19-67
 17
 18    <uses-permission android:name="android.permission.FLASHLIGHT" />
-18-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:12:5-69
-18-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:12:22-66
+18-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:12:5-69
+18-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:12:22-66
 19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-19-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:13:5-80
-19-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:13:22-77
+19-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:13:5-80
+19-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:13:22-77
 20    <uses-permission android:name="android.permission.INTERNET" />
-20-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:14:5-67
-20-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:14:22-64
+20-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:14:5-67
+20-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:14:22-64
 21
 22    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 23    <!-- <uses-sdk android:minSdkVersion="14"/> -->
@@ -61,69 +61,69 @@
 32-->[com.google.android.gms:play-services-measurement:17.2.0] C:\Users\Dante\.gradle\caches\transforms-2\files-2.1\7c4237e0029812955685234cfce19139\play-services-measurement-17.2.0\AndroidManifest.xml:26:22-107
 33
 34    <application
-34-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:16:5-42:19
+34-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:16:5-42:19
 35        android:allowBackup="true"
-35-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:17:9-35
+35-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:17:9-35
 36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 36-->[androidx.core:core:1.1.0] C:\Users\Dante\.gradle\caches\transforms-2\files-2.1\56b6cdfbd80af409835a31a4470c49f0\core-1.1.0\AndroidManifest.xml:24:18-86
 37        android:debuggable="true"
 38        android:icon="@mipmap/ic_launcher"
-38-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:18:9-43
+38-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:18:9-43
 39        android:label="@string/app_name"
-39-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:19:9-41
+39-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:19:9-41
 40        android:roundIcon="@mipmap/ic_launcher_round"
-40-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:20:9-54
+40-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:20:9-54
 41        android:supportsRtl="true"
-41-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:21:9-35
+41-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:21:9-35
 42        android:testOnly="true"
 43        android:theme="@style/AppTheme" >
-43-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:22:9-40
+43-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:22:9-40
 44        <meta-data
-44-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:23:9-25:70
+44-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:23:9-25:70
 45            android:name="com.google.android.geo.API_KEY"
-45-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:24:13-58
+45-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:24:13-58
 46            android:value="AIzaSyD5SV_nJQcmnN7GzaMp5wqMhuS6LMcy9vg" />
-46-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:25:13-68
+46-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:25:13-68
 47
 48        <activity android:name="com.example.soulbook.editMoodActivity" />
-48-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:26:9-63
-48-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:26:19-51
+48-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:26:9-63
+48-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:26:19-51
 49        <activity android:name="com.example.soulbook.ui.notifications.settingPage" />
-49-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:27:9-66
-49-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:27:19-63
+49-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:27:9-66
+49-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:27:19-63
 50        <activity android:name="com.example.soulbook.friend_mood_view" />
-50-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:28:9-54
-50-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:28:19-51
+50-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:28:9-54
+50-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:28:19-51
 51        <activity android:name="com.example.soulbook.ui.dashboard.friend" />
-51-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:29:9-57
-51-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:29:19-54
+51-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:29:9-57
+51-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:29:19-54
 52        <activity android:name="com.example.soulbook.ui.dashboard.message" />
-52-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:30:9-58
-52-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:30:19-55
+52-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:30:9-58
+52-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:30:19-55
 53        <activity android:name="com.example.soulbook.AddMoodActivity" />
-53-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:31:9-53
-53-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:31:19-50
+53-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:31:9-53
+53-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:31:19-50
 54        <activity android:name="com.example.soulbook.MapsActivity" />
-54-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:32:9-50
-54-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:32:19-47
+54-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:32:9-50
+54-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:32:19-47
 55        <activity android:name="com.example.soulbook.MainActivity" />
-55-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:33:9-50
-55-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:33:19-47
+55-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:33:9-50
+55-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:33:19-47
 56        <activity android:name="com.example.soulbook.SignUpPage" />
-56-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:34:9-48
-56-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:34:19-45
+56-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:34:9-48
+56-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:34:19-45
 57        <activity android:name="com.example.soulbook.LogInPage" >
-57-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:35:9-41:20
-57-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:35:19-44
+57-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:35:9-41:20
+57-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:35:19-44
 58            <intent-filter>
-58-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:36:13-40:29
+58-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:36:13-40:29
 59                <action android:name="android.intent.action.MAIN" />
-59-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:37:17-69
-59-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:37:25-66
+59-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:37:17-69
+59-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:37:25-66
 60
 61                <category android:name="android.intent.category.LAUNCHER" />
-61-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:39:17-77
-61-->C:\Users\Dante\Desktop\dx301\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:39:27-74
+61-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:39:17-77
+61-->C:\Users\Dante\Documents\GitHub\ChasingTime\soulbook\app\src\main\AndroidManifest.xml:39:27-74
 62            </intent-filter>
 63        </activity>
 64        <activity

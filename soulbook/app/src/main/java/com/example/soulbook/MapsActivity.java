@@ -91,9 +91,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         final Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-        List<Address> addresses = new ArrayList<Address>();
-        double lon = location.getLatitude();
-        double lat = location.getLongitude();
+        double lat = location.getLatitude();
+        double lon = location.getLongitude();
         LatLng camera = new LatLng(lat,lon);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(camera));
     }

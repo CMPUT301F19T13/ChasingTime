@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Dante\\Desktop\\dx301\\ChasingTime\\soulbook\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ms\\values-ms.xml",
+            "outputFile": "C:\\Users\\Dante\\Documents\\GitHub\\ChasingTime\\soulbook\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ms\\values-ms.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Dante\\.gradle\\caches\\transforms-2\\files-2.1\\4e0bf5ceac6c47f2cebbeeee6cfb2dca\\jetified-play-services-basement-17.0.0\\res\\values-ms\\values.xml",
