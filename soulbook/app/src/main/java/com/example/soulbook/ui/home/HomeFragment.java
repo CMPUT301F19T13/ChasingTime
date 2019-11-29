@@ -103,7 +103,7 @@ public class HomeFragment extends Fragment{
                         }
                     }
                 });
-                Toast.makeText(getContext(), String.valueOf(datasave.thisuser.getMoods().size()), Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), String.valueOf(datasave.thisuser.getMoods().size()), Toast.LENGTH_LONG).show();
                 FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
