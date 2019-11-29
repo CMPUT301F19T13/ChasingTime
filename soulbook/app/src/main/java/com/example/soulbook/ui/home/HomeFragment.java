@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,6 +58,7 @@ public class HomeFragment extends Fragment{
     ArrayList<String> nicknames;
     ArrayList<mood> moodlist;
     FloatingActionButton homepageShowButton;
+    private Spinner homepageFiltermood;
     boolean showDetail = false;
     FloatingActionButton homepageAddmood;
 
@@ -85,6 +87,8 @@ public class HomeFragment extends Fragment{
                 homepagemoodlist = root.findViewById(R.id.homepage_moodlist);
                 homepageShowButton = root.findViewById(R.id.homepage_showbutton);
                 homepageAddmood = root.findViewById(R.id.homepage_addmood);
+                homepageFiltermood = root.findViewById(R.id.filter_mood);
+
                 final String UserId = FirebaseAuth.getInstance().getUid();
                 homepageShowButton.setOnClickListener(new View.OnClickListener() {
                     /**

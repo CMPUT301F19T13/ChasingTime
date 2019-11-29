@@ -1284,6 +1284,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filter_mood
 id fixed
 id forever
 id friendList_nickname

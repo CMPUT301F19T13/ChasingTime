@@ -25,11 +25,21 @@
         android:layout_marginRight="40dp"
         android:id="@+id/homepage_showbutton"/>
 
+    <Spinner
+        android:id="@+id/filter_mood"
+        android:layout_width="180dp"
+        android:layout_height="25dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="100dp"
+        android:entries="@array/socialSituation"
+        app:fabCustomSize="200dp" />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
@@ -38,26 +48,29 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="center_vertical"
-                android:src="@drawable/touxiang"/>
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/touxiang" />
 
             <TextView
+                android:id="@+id/homepage_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="nickname"
-                android:textSize="35dp"
                 android:layout_gravity="center"
+                android:text="nickname"
                 android:textColor="#ffffff"
-                android:id="@+id/homepage_nickname"/>
+                android:textSize="35dp" />
 
         </FrameLayout>
 
         <ListView
+            android:id="@+id/homepage_moodlist"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/homepage_moodlist"
-            android:layout_marginBottom="60dp"/>
+            android:layout_marginBottom="60dp">
+
+        </ListView>
 
     </LinearLayout>
+
 </FrameLayout>
