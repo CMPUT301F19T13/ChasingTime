@@ -20,12 +20,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD5SV_nJQcmnN7GzaMp5wqMhuS6LMcy9vg"/>
         <activity android:name=".editMoodActivity"></activity>
         <activity android:name=".ui.notifications.settingPage" />
         <activity android:name=".friend_mood_view" />
         <activity android:name=".ui.dashboard.friend" />
         <activity android:name=".ui.dashboard.message" />
         <activity android:name=".AddMoodActivity" />
+        <activity android:name=".MapsActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SignUpPage" />
         <activity android:name=".LogInPage">

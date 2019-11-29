@@ -25,6 +25,7 @@ import com.bumptech.glide.Glide;
 import com.example.soulbook.AddMoodActivity;
 import com.example.soulbook.LogInPage;
 import com.example.soulbook.MainActivity;
+import com.example.soulbook.MapsActivity;
 import com.example.soulbook.R;
 import com.example.soulbook.User;
 import com.example.soulbook.datasave;
@@ -71,6 +72,7 @@ public class HomeFragment extends Fragment{
     ArrayList<String> filterMood = new ArrayList<>();
     ArrayList<mood> filterMoodList = new ArrayList<>();
     ArrayList<String> filterNickname = new ArrayList<>();
+    FloatingActionButton homepageMap;
     ImageView avatar;
 
     /**
@@ -94,6 +96,7 @@ public class HomeFragment extends Fragment{
              */
             @Override
             public void onChanged(@Nullable final String s) {
+                homepageMap = root.findViewById(R.id.mapButton);
                 homepageNickname = root.findViewById(R.id.homepage_nickname);
                 homepagemoodlist = root.findViewById(R.id.homepage_moodlist);
                 homepageShowButton = root.findViewById(R.id.homepage_showbutton);
@@ -185,6 +188,31 @@ public class HomeFragment extends Fragment{
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
 
+                    }
+                });
+                homepageAddmood.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getActivity(), AddMoodActivity.class));
+                    }
+                });
+                homepageMap.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getActivity(), MapsActivity.class);
+                        ArrayList<String> latitude = new ArrayList<>();
+                        ArrayList<String> longtitude = new ArrayList<>();
+                        ArrayList<String> emotion = new ArrayList<>();
+                        for(int i = 0; i < moodlist.size(); i++){
+                            latitude.add(moodlist.get(i).getlatitude());
+                            longtitude.add(moodlist.get(i).getLongtitude());
+                            emotion.add(moodlist.get(i).getEmotion());
+                        }
+                        intent.putExtra("latitude", latitude);
+                        intent.putExtra("longtitude", longtitude);
+                        intent.putExtra("emotion", emotion);
+                        intent.putExtra("nickname", nicknames);
+                        startActivity(intent);
                     }
                 });
             }

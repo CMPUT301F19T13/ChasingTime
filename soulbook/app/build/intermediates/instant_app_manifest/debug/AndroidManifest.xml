@@ -23,6 +23,11 @@
     <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
     <!-- <uses-sdk android:minSdkVersion="14"/> -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
@@ -37,12 +42,17 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD5SV_nJQcmnN7GzaMp5wqMhuS6LMcy9vg" />
+
         <activity android:name="com.example.soulbook.editMoodActivity" />
         <activity android:name="com.example.soulbook.ui.notifications.settingPage" />
         <activity android:name="com.example.soulbook.friend_mood_view" />
         <activity android:name="com.example.soulbook.ui.dashboard.friend" />
         <activity android:name="com.example.soulbook.ui.dashboard.message" />
         <activity android:name="com.example.soulbook.AddMoodActivity" />
+        <activity android:name="com.example.soulbook.MapsActivity" />
         <activity android:name="com.example.soulbook.MainActivity" />
         <activity android:name="com.example.soulbook.SignUpPage" />
         <activity android:name="com.example.soulbook.LogInPage" >
@@ -93,7 +103,10 @@
         <service
             android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
             android:exported="true"
-            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" /> <!-- Needs to be explicitly declared on P+ -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <receiver
             android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"

@@ -109,10 +109,10 @@ public class AddMoodActivity extends AppCompatActivity {
                 if(b){
 
                     List<Address> addresses = new ArrayList<Address>();
-                    longtitude = location.getLatitude();
-                    latitude = location.getLongitude();
+                    latitude = location.getLatitude();
+                    longtitude = location.getLongitude();
                     try {
-                        addresses = geocoder.getFromLocation(longtitude, latitude,1);
+                        addresses = geocoder.getFromLocation(latitude, longtitude, 1);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
