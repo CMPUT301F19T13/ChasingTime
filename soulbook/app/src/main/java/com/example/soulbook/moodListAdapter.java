@@ -175,6 +175,35 @@ public class moodListAdapter extends BaseAdapter {
                 editButton.setVisibility(View.INVISIBLE);
             }
         }
+
+        if (thismood.getPoster().equals(datasave.UserId)){
+            if (datasave.avatar != null){
+                Glide.with(context).load(datasave.avatar).into(listViewAvatar);
+            }
+        }
+        else{
+            FirebaseDatabase.getInstance().getReference().child("users").child(thismood.getPoster()).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.child("AvatarPath").getValue().toString().length() != 0){
+                        StorageReference s = FirebaseStorage.getInstance().getReference().child("avatar").child(thismood.getPoster());
+                        s.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                Glide.with(context)
+                                        .load(uri)
+                                        .into(listViewAvatar);
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

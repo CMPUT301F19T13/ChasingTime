@@ -1,6 +1,7 @@
 package com.example.soulbook.ui.home;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,6 +21,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.bumptech.glide.Glide;
 import com.example.soulbook.AddMoodActivity;
 import com.example.soulbook.LogInPage;
 import com.example.soulbook.MainActivity;
@@ -27,6 +30,8 @@ import com.example.soulbook.User;
 import com.example.soulbook.datasave;
 import com.example.soulbook.mood;
 import com.example.soulbook.moodListAdapter;
+import com.example.soulbook.ui.notifications.settingPage;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -35,6 +40,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -65,6 +71,7 @@ public class HomeFragment extends Fragment{
     ArrayList<String> filterMood = new ArrayList<>();
     ArrayList<mood> filterMoodList = new ArrayList<>();
     ArrayList<String> filterNickname = new ArrayList<>();
+    ImageView avatar;
 
     /**
      * This method shows the nicknames and historical mood of current user
@@ -92,6 +99,7 @@ public class HomeFragment extends Fragment{
                 homepageShowButton = root.findViewById(R.id.homepage_showbutton);
                 homepageAddmood = root.findViewById(R.id.homepage_addmood);
                 homepageFilterMood = root.findViewById(R.id.homepage_filter);
+                avatar = root.findViewById(R.id.homepage_avatar);
                 final String UserId = FirebaseAuth.getInstance().getUid();
                 homepageShowButton.setOnClickListener(new View.OnClickListener() {
                     /**
@@ -116,6 +124,19 @@ public class HomeFragment extends Fragment{
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         moods = new ArrayList<>();
                         homepageNickname.setText(dataSnapshot.child("users").child(UserId).child("nickname").getValue().toString());
+                        //if(datasave.thisuser.getAvatarPath().length() != 0){
+                        //    FirebaseStorage.getInstance().getReference().child("avatar").child(datasave.UserId).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        //        @Override
+                        //        public void onSuccess(Uri uri) {
+                        //            Glide.with(getContext())
+                        //                    .load(uri)
+                        //                    .into(avatar);
+                        //        }
+                        //    });
+                        //}
+                        if (datasave.avatar != null){
+                            Glide.with(getContext()).load(datasave.avatar).into(avatar);
+                        }
                         ArrayList<String> theMoods = new ArrayList<>();
                         for (int i = 0; i < datasave.thisuser.getFriends().size(); i++){
                             theMoods = new ArrayList<>();

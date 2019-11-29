@@ -1,6 +1,7 @@
 package com.example.soulbook;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +12,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +24,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
 
@@ -94,9 +98,10 @@ public class LogInPage extends AppCompatActivity {
                                      * save user's info
                                      */
                                     @Override
-                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
                                         datasave.thisuser.setNickname(dataSnapshot.child("nickname").getValue().toString());
                                         datasave.thisuser.setEmail(dataSnapshot.child("email").getValue().toString());
+                                        datasave.thisuser.setAvatarPath(dataSnapshot.child("AvatarPath").getValue().toString());
                                         datasave.UserId = FirebaseAuth.getInstance().getUid().toString();
                                         friends = (ArrayList)dataSnapshot.child("friends").getValue();
                                         if(friends == null){
@@ -109,6 +114,14 @@ public class LogInPage extends AppCompatActivity {
                                             moods = new ArrayList<>();
                                         }
                                         datasave.thisuser.setMoods(moods);
+                                        if(datasave.thisuser.getAvatarPath().length() != 0){
+                                            FirebaseStorage.getInstance().getReference().child("avatar").child(datasave.UserId).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                @Override
+                                                public void onSuccess(Uri uri) {
+                                                    datasave.avatar = uri;
+                                                }
+                                            });
+                                        }
                                     }
 
 

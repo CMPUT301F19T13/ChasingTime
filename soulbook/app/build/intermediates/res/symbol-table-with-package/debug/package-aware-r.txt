@@ -1314,6 +1314,7 @@ id groups
 id home
 id homeAsUp
 id homepage_addmood
+id homepage_avatar
 id homepage_filter
 id homepage_moodlist
 id homepage_nickname
@@ -1362,6 +1363,7 @@ id media_actions
 id message
 id message_back
 id message_listview
+id messagefage_avatar
 id messagelist_message
 id messagelist_nickname
 id messagepage_friends
@@ -1438,8 +1440,10 @@ id searchpage_content
 id select_dialog_listview
 id selected
 id setnickname
+id setting_avatar
 id settingpage_SignOut
 id settingpage_account
+id settingpage_avatar
 id settingpage_backbutton
 id settingpage_changeAvatar
 id settingpage_changeNickname

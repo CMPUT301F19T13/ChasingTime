@@ -56,6 +56,14 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
             android:textSize="40dp"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/touxiang"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginRight="20dp"
+            android:id="@+id/setting_avatar"/>
     </FrameLayout>
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.soulbook;
 
 import android.content.Context;
+import android.net.Uri;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ public class datasave {
     public static int[] emoji = {0x1F603, 0x1F628, 0x1F62D ,0x1F620, 0x1F603, 0x1F635, 0x1F606};
     public static String[] socialSit = {"Alone", "With families", "With friends", "With strangers"};
     public static DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    public static Uri avatar = null;
     /**
      * constructor
      */

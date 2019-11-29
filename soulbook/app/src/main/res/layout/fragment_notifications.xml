@@ -14,7 +14,8 @@
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/touxiang"/>
+            android:src="@drawable/touxiang"
+            android:id="@+id/settingpage_avatar"/>
 
         <TextView
             android:layout_width="wrap_content"
