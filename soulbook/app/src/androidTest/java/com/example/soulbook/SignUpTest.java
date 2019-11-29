@@ -101,7 +101,7 @@ public class SignUpTest {
         solo.enterText((EditText) solo.getView(R.id.userEmail), email);//enter email
         solo.enterText((EditText) solo.getView(R.id.password), "12345");//enter password
 
-        solo.clickOnButton("Log in");//click LOG IN
+        solo.clickOnButton("Sign in");//click LOG IN
         // Asserts that the current activity is the MainActivity. Otherwise, show “Wrong Activity”
         solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
     }

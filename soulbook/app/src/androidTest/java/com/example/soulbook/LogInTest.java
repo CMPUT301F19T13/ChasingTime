@@ -39,7 +39,7 @@ public class LogInTest {
         solo.assertCurrentActivity("Wrong Activity", LogInPage.class);
         solo.enterText((EditText) solo.getView(R.id.userEmail), "dxzero@gmail.com");//enter email
         solo.enterText((EditText) solo.getView(R.id.password), "qq452010");//enter password
-        solo.clickOnButton("Log in");
+        solo.clickOnButton("Sign in");
 
         solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
     }
@@ -52,7 +52,7 @@ public class LogInTest {
         solo.assertCurrentActivity("Wrong Activity", LogInPage.class);
         solo.enterText((EditText) solo.getView(R.id.userEmail), "dxzero@gmail.com");//enter email
         solo.enterText((EditText) solo.getView(R.id.password), "x");//enter password
-        solo.clickOnButton("Log in");
+        solo.clickOnButton("Sign in");
 
         assertTrue(solo.waitForText("Log in fail"));
     }
@@ -65,7 +65,7 @@ public class LogInTest {
         solo.assertCurrentActivity("Wrong Activity", LogInPage.class);
         solo.enterText((EditText) solo.getView(R.id.userEmail), "xxxxxxxxxx");//enter email
         solo.enterText((EditText) solo.getView(R.id.password), "x");//enter password
-        solo.clickOnButton("Log in");
+        solo.clickOnButton("Sign in");
 
         assertTrue(solo.waitForText("Log in fail"));
     }
