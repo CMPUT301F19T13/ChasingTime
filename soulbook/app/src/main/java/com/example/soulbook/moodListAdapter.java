@@ -47,12 +47,24 @@ public class moodListAdapter extends BaseAdapter {
     private LayoutInflater mLayoutInflater;
     private ImageView listViewAvatar, photos[] = new ImageView[9];
     private TextView listViewNickName, listViewMoodText, listViewTime, listViewLocation, listViewLikeList, listViewEmoji, listViewSocialSit, listViewEmojiText;
-    private ImageButton deleteButton, likeButton;
+    private ImageButton deleteButton, likeButton, editButton;
     private String nickname;
     private HomeFragment m;
     private friend_mood_view n;
     private boolean ifshow;
     ArrayList<File> photoFile;
+    boolean ifFilter;
+
+    public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames, ArrayList<String> moodId, HomeFragment m, boolean show, boolean ifFilter){
+        this.m = m;
+        this.context = context;
+        mLayoutInflater = LayoutInflater.from(context);
+        this.moods = moods;
+        this.nicknames = nicknames;
+        this.moodId = moodId;
+        ifshow = show;
+        this.ifFilter = ifFilter;
+    }
 
     public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames, ArrayList<String> moodId, HomeFragment m, boolean show){
         this.m = m;
@@ -62,6 +74,7 @@ public class moodListAdapter extends BaseAdapter {
         this.nicknames = nicknames;
         this.moodId = moodId;
         ifshow = show;
+        this.ifFilter = false;
     }
 
     public moodListAdapter(Context context, ArrayList<mood> moods, ArrayList<String> nicknames, ArrayList<String> moodId, friend_mood_view n, boolean show){
@@ -73,7 +86,7 @@ public class moodListAdapter extends BaseAdapter {
         this.nicknames = nicknames;
         this.moodId = moodId;
         ifshow = show;
-
+        this.ifFilter = false;
     }
 
 
@@ -104,6 +117,7 @@ public class moodListAdapter extends BaseAdapter {
         listViewLikeList = convertView.findViewById(R.id.listview_like_list);
         deleteButton = convertView.findViewById(R.id.listview_delete_mood);
         likeButton = convertView.findViewById(R.id.listview_like_button);
+        editButton = convertView.findViewById(R.id.listview_edit_mood);
         listViewSocialSit = convertView.findViewById(R.id.listview_socialSit);
         listViewEmojiText = convertView.findViewById(R.id.listview_emojiText);
         photos[0] = convertView.findViewById(R.id.listview_photo1);
@@ -126,14 +140,14 @@ public class moodListAdapter extends BaseAdapter {
         likeButton.setVisibility(View.INVISIBLE);
         listViewLikeList.setHeight(0);
 
-        if (thismood.getLocation() !=  "null" && thismood.getLocation() != null){
+        if (!thismood.getLocation().equals("null") && thismood.getLocation() != null){
             listViewLocation.setText(thismood.getLocation());
         }
         else{
             listViewLocation.setText("");
         }
 
-        if (thismood.getSocialSit() != null && thismood.getSocialSit() != "null"){
+        if (thismood.getSocialSit() != null && !thismood.getSocialSit().equals("null")){
                 listViewSocialSit.setText(thismood.getSocialSit());
             }
         else{
@@ -147,16 +161,23 @@ public class moodListAdapter extends BaseAdapter {
         }
 
         listViewEmoji.setText(new String(Character.toChars(emotionToEmojiUnicode(thismood.getEmotion()))));
-        if (thismood.getPoster().equals(datasave.UserId)){
-            deleteButton.setVisibility(View.VISIBLE);
+        if (ifFilter){
+            deleteButton.setVisibility(View.INVISIBLE);
+            editButton.setVisibility(View.INVISIBLE);
         }
         else{
-            deleteButton.setVisibility(View.INVISIBLE);
+            if (thismood.getPoster().equals(datasave.UserId)){
+                deleteButton.setVisibility(View.VISIBLE);
+                editButton.setVisibility(View.VISIBLE);
+            }
+            else{
+                deleteButton.setVisibility(View.INVISIBLE);
+                editButton.setVisibility(View.INVISIBLE);
+            }
         }
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                datasave a = new datasave();
                 if (m != null){
                     m.removemood(moods.size() - 1 -position);
                 }
@@ -165,6 +186,24 @@ public class moodListAdapter extends BaseAdapter {
                 }
             }
         });
+
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(context, editMoodActivity.class);
+                in.putExtra("moodId", moodId.get(moods.size() - 1 - position));
+                if (m != null){
+                    in.putExtra("from", 0);
+                    m.intentEditPage(in);
+                }
+                else{
+                    in.putExtra("from", 1);
+                    n.intentEditPage(in);
+                }
+
+            }
+        });
+
         if (ifshow){
             listViewMoodText.setText(thismood.getContent());
             for (int i = 0; i <thismood.getPhotonumber(); i++){

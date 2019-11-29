@@ -31,13 +31,17 @@ public class friend_mood_view extends AppCompatActivity {
     ArrayList<String> nicknames;
     ArrayList<mood> moodlist;
     ImageButton back;
+    String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friend_mood_view);
         Intent in = getIntent();
-        final String userId = in.getStringExtra("userId");
+        userId = in.getStringExtra("userId");
+        if (userId == null){
+            userId = datasave.UserId;
+        }
         nickname = findViewById(R.id.friend_mood_view_nickname);
         showButton = findViewById(R.id.friend_mood_view_showbutton);
         moodList = findViewById(R.id.friend_mood_view_moodlist);
@@ -107,5 +111,9 @@ public class friend_mood_view extends AppCompatActivity {
         moods.remove(postition);
         FirebaseDatabase.getInstance().getReference().child("users").child(datasave.UserId).child("moods").setValue(moods);
         moodList.setAdapter(new moodListAdapter(friend_mood_view.this, moodlist, nicknames, moods, friend_mood_view.this,showDetail));
+    }
+
+    public void intentEditPage(Intent in){
+        startActivity(in);
     }
 }

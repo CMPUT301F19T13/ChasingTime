@@ -34,6 +34,16 @@
             android:id="@+id/listview_delete_mood"
             android:scaleType="fitXY"
             android:background="@color/colorTransparency"/>
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_gravity="right|center"
+            android:src="@drawable/edit"
+            android:id="@+id/listview_edit_mood"
+            android:scaleType="fitXY"
+            android:background="@color/colorTransparency"/>
     </FrameLayout>
 
     <LinearLayout

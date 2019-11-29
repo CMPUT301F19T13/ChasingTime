@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,6 +61,10 @@ public class HomeFragment extends Fragment{
     FloatingActionButton homepageShowButton;
     boolean showDetail = false;
     FloatingActionButton homepageAddmood;
+    Spinner homepageFilterMood;
+    ArrayList<String> filterMood = new ArrayList<>();
+    ArrayList<mood> filterMoodList = new ArrayList<>();
+    ArrayList<String> filterNickname = new ArrayList<>();
 
     /**
      * This method shows the nicknames and historical mood of current user
@@ -85,6 +91,7 @@ public class HomeFragment extends Fragment{
                 homepagemoodlist = root.findViewById(R.id.homepage_moodlist);
                 homepageShowButton = root.findViewById(R.id.homepage_showbutton);
                 homepageAddmood = root.findViewById(R.id.homepage_addmood);
+                homepageFilterMood = root.findViewById(R.id.homepage_filter);
                 final String UserId = FirebaseAuth.getInstance().getUid();
                 homepageShowButton.setOnClickListener(new View.OnClickListener() {
                     /**
@@ -118,10 +125,6 @@ public class HomeFragment extends Fragment{
                             }
                             moods.addAll(theMoods);
                         }
-                        //moods = (ArrayList<String>) dataSnapshot.child("users").child(UserId).child("moods").getValue();
-                        //if (moods == null){
-                        //    moods = new ArrayList<>();
-                        //}
                         Collections.sort(moods);
                         String posterId;
                         for (int i = 0; i < moods.size(); i++){
@@ -129,6 +132,9 @@ public class HomeFragment extends Fragment{
                             posterId = dataSnapshot.child("moods").child(moods.get(i)).child("poster").getValue().toString();
                             nicknames.add(dataSnapshot.child("users").child(posterId).child("nickname").getValue().toString());
                         }
+                        filterMood.addAll(moods);
+                        filterMoodList.addAll(moodlist);
+                        filterNickname.addAll(nicknames);
                         homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
                     }
 
@@ -141,6 +147,23 @@ public class HomeFragment extends Fragment{
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getActivity(), AddMoodActivity.class));
+                    }
+                });
+
+                homepageFilterMood.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        if(position == 0){
+                            homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
+                        }
+                        else{
+                            setFilterMood(datasave.emotions[position-1]);
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
                     }
                 });
             }
@@ -161,6 +184,27 @@ public class HomeFragment extends Fragment{
         moods.remove(postition);
         datasave.thisuser.setMoods(userMood);
         FirebaseDatabase.getInstance().getReference().child("users").child(datasave.UserId).child("moods").setValue(userMood);
-        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods, HomeFragment.this, showDetail));
+        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), moodlist, nicknames, moods,HomeFragment.this, showDetail));
+    }
+
+    public void setFilterMood(String emotion){
+        filterMood = new ArrayList<>();
+        int a = 0;
+        filterMoodList = new ArrayList<>();
+        filterNickname = new ArrayList<>();
+        for(int i = 0; i < moodlist.size(); i++){
+            if(moodlist.get(i).getEmotion().equals(emotion)){
+                a++;
+                filterMood.add(moods.get(i));
+                filterMoodList.add(moodlist.get(i));
+                filterNickname.add(nicknames.get(i));
+            }
+        }
+        //Toast.makeText(getContext(),String.valueOf(filterMood.size()) + emotion + ": " + moodlist.size() + ": " + a, Toast.LENGTH_LONG).show();
+        homepagemoodlist.setAdapter(new moodListAdapter(getContext(), filterMoodList, filterNickname, filterMood, HomeFragment.this, showDetail, true));
+    }
+
+    public void intentEditPage(Intent in){
+        startActivity(in);
     }
 }

@@ -36,6 +36,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.soulbook.editMoodActivity" />
         <activity android:name="com.example.soulbook.ui.notifications.settingPage" />
         <activity android:name="com.example.soulbook.friend_mood_view" />
         <activity android:name="com.example.soulbook.ui.dashboard.friend" />

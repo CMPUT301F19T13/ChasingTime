@@ -42,6 +42,7 @@ animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array emotions
+array filter
 array socialSituation
 attr action
 attr actionBarDivider
@@ -666,6 +667,7 @@ color colorBlack
 color colorPrimary
 color colorPrimaryDark
 color colorTransparency
+color colorWhite
 color colorblue
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
@@ -1111,6 +1113,7 @@ drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable delete_mood
+drawable delete_photo
 drawable delete_w
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
@@ -1119,6 +1122,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable detail
+drawable edit
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_dashboard_black_24dp
@@ -1273,6 +1277,13 @@ id dimensions
 id direct
 id disableHome
 id edit_query
+id editmood_addphoto
+id editmood_back
+id editmood_content
+id editmood_editmood
+id editmood_emotionspinner
+id editmood_nickname
+id editmood_socialsit
 id end
 id end_padder
 id enterAlways
@@ -1303,6 +1314,7 @@ id groups
 id home
 id homeAsUp
 id homepage_addmood
+id homepage_filter
 id homepage_moodlist
 id homepage_nickname
 id homepage_showbutton
@@ -1325,6 +1337,7 @@ id listMode
 id list_item
 id listview_avatar
 id listview_delete_mood
+id listview_edit_mood
 id listview_emoji
 id listview_emojiText
 id listview_like_button
@@ -1552,6 +1565,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_mood
+layout activity_edit_mood
 layout activity_friend
 layout activity_friend_mood_view
 layout activity_log_in_page
@@ -1561,6 +1575,7 @@ layout activity_setting_page
 layout activity_sign_up_page
 layout add_friend_fragment
 layout custom_dialog
+layout delete_photo_fragment
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

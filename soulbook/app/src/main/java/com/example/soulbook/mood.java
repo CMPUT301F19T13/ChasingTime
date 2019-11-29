@@ -1,5 +1,7 @@
 package com.example.soulbook;
 
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -98,10 +100,12 @@ public class mood {
         return latitude;
     }
 
+    @Nullable
     public void setSocialSit(String socialSit){
         this.socialSit = socialSit;
     }
 
+    @Nullable
     public String getSocialSit() {
         return socialSit;
     }
@@ -117,6 +121,14 @@ public class mood {
      */
     public int getPhotonumber() {
         return photonumber;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setEmotion(String emotion) {
+        this.emotion = emotion;
     }
 
     //some functionality of mood, such as add, delete comments, record the current time when sumbit the mood
@@ -151,7 +163,6 @@ public class mood {
      */
     public void setPhotonumber(int n){
         photonumber = n;
-
     }
     /**
      * a method to get content of a comment
