@@ -78,65 +78,56 @@ public class LogInPage extends AppCompatActivity {
                 final String userEmail = useremail.getText().toString();
                 final String passWord = password.getText().toString();
                 //if the input email is empty
-                if (userEmail == ""){
-                    Toast.makeText(LogInPage.this, "Please enter an email", Toast.LENGTH_LONG).show();
-                }
-
-                //if the input password is empty
-                else if(passWord == ""){
-                    Toast.makeText(LogInPage.this, "Please enter a password", Toast.LENGTH_LONG).show();
-                }
-                else{
+                try{
                     mAuth.signInWithEmailAndPassword(userEmail, passWord).addOnCompleteListener(LogInPage.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                /**
-                                 * email address can match with correct password
-                                 * print "log in fail" if input wrong email address or input wrong password
-                                 */
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    //the input email and password is correct
-                                    if (task.isSuccessful()) {
-                                        final String UserId = FirebaseAuth.getInstance().getUid();
-                                        FirebaseDatabase.getInstance().getReference().child("users").child(UserId).addValueEventListener(new ValueEventListener() {
-
-                                            /**
-                                             * save user's info
-                                             */
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                datasave.thisuser.setNickname(dataSnapshot.child("nickname").getValue().toString());
-                                                datasave.thisuser.setEmail(dataSnapshot.child("email").getValue().toString());
-                                                datasave.UserId = FirebaseAuth.getInstance().getUid().toString();
-                                                friends = (ArrayList)dataSnapshot.child("friends").getValue();
-                                                if(friends == null){
-                                                    friends = new ArrayList<>();
-                                                }
-                                                friends.add(0,UserId);
-                                                datasave.thisuser.setFriends(friends);
-                                                ArrayList<String> moods = (ArrayList<String>) dataSnapshot.child("moods").getValue();
-                                                if (moods == null){
-                                                    moods = new ArrayList<>();
-                                                }
-                                                datasave.thisuser.setMoods(moods);
-                                            }
-
-
-                                            /**
-                                             * cancel login activity
-                                             */
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                            }
-                                        });
-
-                                        startActivity(new Intent(LogInPage.this, MainActivity.class));
+                        @Override
+                        /**
+                         * email address can match with correct password
+                         * print "log in fail" if input wrong email address or input wrong password
+                         */
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            //the input email and password is correct
+                            if (task.isSuccessful()) {
+                                final String UserId = FirebaseAuth.getInstance().getUid();
+                                FirebaseDatabase.getInstance().getReference().child("users").child(UserId).addValueEventListener(new ValueEventListener() {
+                                    /**
+                                     * save user's info
+                                     */
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        datasave.thisuser.setNickname(dataSnapshot.child("nickname").getValue().toString());
+                                        datasave.thisuser.setEmail(dataSnapshot.child("email").getValue().toString());
+                                        datasave.UserId = FirebaseAuth.getInstance().getUid().toString();
+                                        friends = (ArrayList)dataSnapshot.child("friends").getValue();
+                                        if(friends == null){
+                                            friends = new ArrayList<>();
+                                        }
+                                        friends.add(0,UserId);
+                                        datasave.thisuser.setFriends(friends);
+                                        ArrayList<String> moods = (ArrayList<String>) dataSnapshot.child("moods").getValue();
+                                        if (moods == null){
+                                            moods = new ArrayList<>();
+                                        }
+                                        datasave.thisuser.setMoods(moods);
                                     }
-                                    else{
-                                        Toast.makeText(LogInPage.this, "Log in fail", Toast.LENGTH_LONG).show();
+
+
+                                    /**
+                                     * cancel login activity
+                                     */
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
                                     }
-                                }
-                            });
+                                });
+                                startActivity(new Intent(LogInPage.this, MainActivity.class));
+                            }
+                            else{
+                                Toast.makeText(LogInPage.this, "Log in fail", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+                }catch (Exception e){
+                    Toast.makeText(LogInPage.this, "Log in fail", Toast.LENGTH_LONG).show();
                 }
             }
         });

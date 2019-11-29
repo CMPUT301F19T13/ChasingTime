@@ -79,34 +79,39 @@ public class SignUpPage extends AppCompatActivity {
                 }
                 //user create an account successful so that save the username and password into firesbase database
                 else{
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(newemail.getText().toString(), newPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        /**
-                         * finish create a new user account
-                         * user account create fail if email address has been used.
-                         */
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                                User newUser = new User(newemail.getText().toString(), newNickname.getText().toString(), stringPassword);
-                                FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(newUser.toMap());
-                                //Toast.makeText(SignUpPage.this, String.valueOf(email.length), Toast.LENGTH_LONG).show();
-                                FirebaseDatabase.getInstance().getReference().child("emails").child(email[1]).child(email[0]).setValue(uid);
-                                //FirebaseDatabase.getInstance().getReference().child("emails").child(newemail.getText().toString()).setValue(uid);
-                                //FirebaseDatabase.getInstance().getReference().child("emailToId").child(newemail.getText().toString()).setValue(uid);
-                                Intent in = new Intent(SignUpPage.this, LogInPage.class);
-                                startActivity(in);
+                    try{
+                        FirebaseAuth.getInstance().createUserWithEmailAndPassword(newemail.getText().toString(), newPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            /**
+                             * finish create a new user account
+                             * user account create fail if email address has been used.
+                             */
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()){
+                                    String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                    User newUser = new User(newemail.getText().toString(), newNickname.getText().toString(), stringPassword);
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(newUser.toMap());
+                                    //Toast.makeText(SignUpPage.this, String.valueOf(email.length), Toast.LENGTH_LONG).show();
+                                    FirebaseDatabase.getInstance().getReference().child("emails").child(email[1]).child(email[0]).setValue(uid);
+                                    //FirebaseDatabase.getInstance().getReference().child("emails").child(newemail.getText().toString()).setValue(uid);
+                                    //FirebaseDatabase.getInstance().getReference().child("emailToId").child(newemail.getText().toString()).setValue(uid);
+                                    Intent in = new Intent(SignUpPage.this, LogInPage.class);
+                                    startActivity(in);
+                                }
+                                //handle the case that existed duplicate account
+                                else{
+                                    Toast.makeText(SignUpPage.this, "This email has been used", Toast.LENGTH_LONG).show();
+                                    //promote user input a new email address and password
+                                    newemail.setText("");
+                                    newPassword.setText("");
+                                    confirmPassword.setText("");
+                                }
                             }
-                            //handle the case that existed duplicate account
-                            else{
-                                Toast.makeText(SignUpPage.this, "This email has been used", Toast.LENGTH_LONG).show();
-                                //promote user input a new email address and password
-                                newemail.setText("");
-                                newPassword.setText("");
-                                confirmPassword.setText("");
-                            }
-                        }
-                    });
+                        });
+                    }
+                    catch (Exception e){
+                        Toast.makeText(SignUpPage.this, "Sign up fail", Toast.LENGTH_LONG).show();
+                    }
                 }
 
             }

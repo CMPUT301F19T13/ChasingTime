@@ -35,7 +35,7 @@ public class setNicknameFragment extends DialogFragment {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if (setNewNickname.getText().toString() != ""){
+                        if (setNewNickname.getText().toString() != "" && setNewNickname.getText().toString() != null){
                             FirebaseDatabase.getInstance().getReference().child("users").child(datasave.UserId).child("nickname").setValue(setNewNickname.getText().toString());
                             datasave.thisuser.setNickname(setNewNickname.getText().toString());
                         }
