@@ -136,7 +136,6 @@ public class moodListAdapter extends BaseAdapter {
         }
         final mood thismood = moods.get(moods.size() - 1 - position);
         final String Id = moodId.get(moods.size() - 1 - position);
-        //Toast.makeText(context,String.valueOf(thismood.getPhotonumber() + ":" + photoFile.size()), Toast.LENGTH_LONG).show();
         likeButton.setVisibility(View.INVISIBLE);
         listViewLikeList.setHeight(0);
 

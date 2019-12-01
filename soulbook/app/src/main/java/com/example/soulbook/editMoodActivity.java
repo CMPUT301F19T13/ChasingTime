@@ -100,8 +100,6 @@ public class editMoodActivity extends AppCompatActivity implements deletePhotoDi
 
                 for (int i = 0; i < photonumber; i++){
                     setImageView(moodId, thismood, photos[i], i);
-                    //photourl[i] = FirebaseStorage.getInstance().getReference().child("moodphoto").child(moodId).child(String.valueOf(i)).getDownloadUrl().getResult();
-                    //FirebaseStorage.getInstance().getReference().child("moodphoto").child(moodId).child(String.valueOf(i) + ".jpg").getFile(photourl[i]);
                 }
                 for (int i = photonumber ;i < 9; i++){
                     photos[i].setLayoutParams(mParams);
@@ -182,7 +180,6 @@ public class editMoodActivity extends AppCompatActivity implements deletePhotoDi
             @Override
             public void onClick(View v) {
                 if (content.getText().toString().length() == 0){
-                    //Toast.makeText(editMoodActivity.this, " youwenti", Toast.LENGTH_LONG).show();
 
                 }
                 else{

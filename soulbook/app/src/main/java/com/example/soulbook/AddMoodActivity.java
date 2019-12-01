@@ -156,6 +156,9 @@ public class AddMoodActivity extends AppCompatActivity {
 
         addmoodpagesocialSituation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
+            /**
+             *
+             */
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0){
                     social = null;
@@ -166,6 +169,9 @@ public class AddMoodActivity extends AppCompatActivity {
             }
 
             @Override
+            /**
+             *
+             */
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
@@ -192,6 +198,9 @@ public class AddMoodActivity extends AppCompatActivity {
             }
 
             @Override
+            /**
+             *
+             */
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }

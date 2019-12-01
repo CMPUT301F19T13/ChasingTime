@@ -48,8 +48,6 @@ public class settingPage extends AppCompatActivity {
             }
         });
 
-        //Toast.makeText(settingPage.this, datasave.thisuser.getAvatarPath().toString().length() + datasave.thisuser.getAvatarPath().toString() + ":::", Toast.LENGTH_LONG).show();
-
         if (datasave.thisuser.getAvatarPath().length() != 0){
             FirebaseStorage.getInstance().getReference().child("avatar").child(datasave.UserId).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
