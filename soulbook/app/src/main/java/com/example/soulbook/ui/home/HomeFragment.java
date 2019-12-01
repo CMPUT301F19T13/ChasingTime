@@ -56,7 +56,7 @@ import java.util.function.ToIntFunction;
 import java.util.function.ToLongFunction;
 
 /**
- * This is a class that get the mainpage view of the app, and how the fragment react to oncreate
+ * This is a class that get the main page view of the app, and how the fragment react to oncreate
  */
 public class HomeFragment extends Fragment{
     private HomeViewModel homeViewModel;
@@ -121,22 +121,11 @@ public class HomeFragment extends Fragment{
                         }
                     }
                 });
-                //Toast.makeText(getContext(), String.valueOf(datasave.thisuser.getMoods().size()), Toast.LENGTH_LONG).show();
                 FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         moods = new ArrayList<>();
                         homepageNickname.setText(dataSnapshot.child("users").child(UserId).child("nickname").getValue().toString());
-                        //if(datasave.thisuser.getAvatarPath().length() != 0){
-                        //    FirebaseStorage.getInstance().getReference().child("avatar").child(datasave.UserId).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        //        @Override
-                        //        public void onSuccess(Uri uri) {
-                        //            Glide.with(getContext())
-                        //                    .load(uri)
-                        //                    .into(avatar);
-                        //        }
-                        //    });
-                        //}
                         if (datasave.avatar != null){
                             Glide.with(getContext()).load(datasave.avatar).into(avatar);
                         }
@@ -249,7 +238,6 @@ public class HomeFragment extends Fragment{
                 filterNickname.add(nicknames.get(i));
             }
         }
-        //Toast.makeText(getContext(),String.valueOf(filterMood.size()) + emotion + ": " + moodlist.size() + ": " + a, Toast.LENGTH_LONG).show();
         homepagemoodlist.setAdapter(new moodListAdapter(getContext(), filterMoodList, filterNickname, filterMood, HomeFragment.this, showDetail, true));
     }
 

@@ -24,7 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-//import com.google.firebase.auth.UserRecord;
 
 /**
  * This is a class that shows the interface of the frined section in dashboard.
@@ -51,19 +50,11 @@ public class friend extends AppCompatActivity implements searchFriend.OnFragment
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 friends = new ArrayList<>();
-                //friends.add(datasave.thisuser.getNickname());
                 Ids = datasave.thisuser.getFriends();
-                //Ids = (ArrayList)dataSnapshot.child(datasave.UserId).child("friends").getValue();
-                //if (Ids == null){
-                //    Ids = new ArrayList<>();
-                //}
-                //else{
                     for (int i = 0; i < Ids.size(); i++){
                         friends.add(dataSnapshot.child(Ids.get(i)).child("nickname").getValue().toString());
                     }
-                //}
                 friendlist.setAdapter(new friendListAdapter(friend.this,friends));
-                //Ids.add(0,datasave.UserId);
             }
 
             @Override
@@ -109,7 +100,6 @@ public class friend extends AppCompatActivity implements searchFriend.OnFragment
         FirebaseDatabase.getInstance().getReference().child("emails").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //userId[0] = dataSnapshot.child(Email[1]).child(Email[0]).getValue().toString();
                 if (dataSnapshot.child(Email[1]).child(Email[0]).getValue() == null){
                     Toast.makeText(friend.this,"Cannot find this user, please check the email address", Toast.LENGTH_LONG).show();
                 }

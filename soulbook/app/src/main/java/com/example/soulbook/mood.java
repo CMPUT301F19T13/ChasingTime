@@ -131,7 +131,7 @@ public class mood {
         this.emotion = emotion;
     }
 
-    //some functionality of mood, such as add, delete comments, record the current time when sumbit the mood
+    //some functionality of mood, such as add, delete comments, record the current time when submit the mood
 
     /**
      * a method to get time
