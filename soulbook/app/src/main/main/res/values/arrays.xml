@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emotions">
+        <item>Happiness</item>
+        <item>Fear</item>
+        <item>Sadness</item>
+        <item>Anger</item>
+        <item>Surprise</item>
+        <item>Disgust</item>
+        <item>Excitement</item>
+    </string-array>
+
+    <string-array name="socialSituation">
+        <item>not selected</item>
+        <item>Alone</item>
+        <item>With families</item>
+        <item>With friends</item>
+        <item>With strangers</item>
+    </string-array>
+
+    <string-array name="filter">
+        <item>All</item>
+        <item>Happiness</item>
+        <item>Fear</item>
+        <item>Sadness</item>
+        <item>Anger</item>
+        <item>Surprise</item>
+        <item>Disgust</item>
+        <item>Excitement</item>
+    </string-array>
+</resources>

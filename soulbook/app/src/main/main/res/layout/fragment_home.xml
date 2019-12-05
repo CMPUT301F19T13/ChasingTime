@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end|bottom"
+        android:id="@+id/homepage_addmood"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/add"
+        android:backgroundTint="#1c6db3"
+        app:fabCustomSize="40dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end|bottom"
+        android:backgroundTint="@color/colorblue"
+        android:src="@drawable/detail"
+        app:fabCustomSize="40dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="40dp"
+        android:id="@+id/homepage_showbutton"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mapButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="80dp"
+        android:backgroundTint="@color/colorblue"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_menu_directions" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#1c6db3">
+
+            <ImageView
+                android:id="@+id/homepage_avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/touxiang" />
+
+            <Spinner
+                android:id="@+id/homepage_filter"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorWhite"
+                android:entries="@array/filter" />
+
+            <TextView
+                android:id="@+id/homepage_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="nickname"
+                android:textColor="#ffffff"
+                android:textSize="35dp" />
+
+
+        </FrameLayout>
+
+        <ListView
+            android:id="@+id/homepage_moodlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="60dp" >
+
+        </ListView>
+
+    </LinearLayout>
+</FrameLayout>
